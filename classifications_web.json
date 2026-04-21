@@ -1945,7 +1945,8 @@
         "Optic pathway glioma",
         "Plexiform neurofibroma",
         "Bone dysplasia",
-        "Non-optic pathway glioma"
+        "Non-optic pathway glioma",
+        "High grade glioma"
       ],
       "nf2_swn_manifestations": [
         "Vestibular schwannoma",
