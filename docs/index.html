@@ -408,8 +408,26 @@ function renderDrawer() {
     <!-- Paper info -->
     <div class="bg-gray-50 border rounded-lg p-3 mb-4 text-xs text-gray-600 leading-relaxed">
       <p class="font-semibold text-gray-900 text-sm mb-1 leading-snug">${esc(pub.title||pmid)}</p>
-      <p>${pub.year||''}${pub.year&&pub.journal?' · ':''}${esc(pub.journal||'')} · PMID ${pmid}</p>
-      ${pub.abstract ? `<details class="mt-1.5"><summary class="text-blue-600 cursor-pointer hover:underline">Show abstract</summary>
+      <p class="mb-2">${pub.year||''}${pub.year&&pub.journal?' · ':''}${esc(pub.journal||'')} · PMID ${pmid}</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/${pmid}/" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1 px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-medium transition">
+          PubMed ↗
+        </a>
+        ${pub.pmc_id ? `<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/${esc(pub.pmc_id.replace(/[^0-9]/g,''))}/" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1 px-2 py-1 bg-teal-600 hover:bg-teal-700 text-white rounded text-xs font-medium transition">
+          PMC Full Text ↗
+        </a>` : ''}
+        ${pub.fulltext_source && pub.fulltext_source.startsWith('PDF:') ? `<a href="${esc(pub.fulltext_source.slice(4))}" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1 px-2 py-1 bg-green-600 hover:bg-green-700 text-white rounded text-xs font-medium transition">
+          Open Access PDF ↗
+        </a>` : ''}
+        ${pub.doi ? `<a href="https://doi.org/${esc(pub.doi)}" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1 px-2 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded text-xs font-medium transition">
+          DOI ↗
+        </a>` : ''}
+      </div>
+      ${pub.abstract ? `<details class="mt-2"><summary class="text-blue-600 cursor-pointer hover:underline mt-1">Show abstract</summary>
         <p class="mt-1.5 text-gray-600 leading-relaxed">${esc(pub.abstract.substring(0,800))}${pub.abstract.length>800?'…':''}</p>
       </details>` : ''}
     </div>
