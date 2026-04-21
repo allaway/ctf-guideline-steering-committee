@@ -1946,7 +1946,8 @@
         "Plexiform neurofibroma",
         "Bone dysplasia",
         "Non-optic pathway glioma",
-        "High grade glioma"
+        "High grade glioma",
+        "MPNST / triton tumor"
       ],
       "nf2_swn_manifestations": [
         "Vestibular schwannoma",
@@ -1968,7 +1969,7 @@
       "focus_surveillance_management": false,
       "focus_genetic_testing": false,
       "methodologies": [],
-      "strength_of_evidence": "Not assessable",
+      "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "",
       "notes": "This is a general educational/overview article (likely a StatPearls-type entry) summarizing the three types of neurofibromatosis. It contains no recommendations, grading, or systematic methodology. Not a guideline or recommendation document."
     }
