@@ -547,10 +547,15 @@ function applyEdit() {
 
 function updateSaveButton() {
   const n = Object.keys(localChanges).length;
-  document.getElementById('changeBadge').textContent = n;
   const btn = document.getElementById('saveBtn');
-  if (n > 0) { btn.classList.remove('hidden'); btn.classList.add('flex'); }
-  else        { btn.classList.add('hidden');    btn.classList.remove('flex'); }
+  if (n > 0) {
+    btn.innerHTML = `Save <span id="changeBadge" class="bg-green-700 text-white text-xs px-1.5 py-0.5 rounded-full">${n}</span>`;
+    btn.classList.remove('hidden');
+    btn.classList.add('flex');
+  } else {
+    btn.classList.add('hidden');
+    btn.classList.remove('flex');
+  }
   updateStats();
 }
 
@@ -566,6 +571,8 @@ let _pendingSave = false;
 
 async function _doSave(password) {
   const btn = document.getElementById('saveBtn');
+  btn.classList.remove('hidden');
+  btn.classList.add('flex');
   btn.innerHTML = '⏳ Saving…';
   btn.disabled = true;
 
@@ -588,19 +595,17 @@ async function _doSave(password) {
     const json = await res.json();
     if (!res.ok) {
       if (res.status === 401) {
-        // Wrong password — show modal again with error
         sessionStorage.removeItem('write_password');
+        _pendingSave = true;
         document.getElementById('passwordError').classList.remove('hidden');
         promptPassword();
         return;
       }
       throw new Error(json.error || `HTTP ${res.status}`);
     }
-    // Success
     for (const [pmid, c] of Object.entries(localChanges)) allData[pmid].classification = c;
     localChanges = {};
     _pendingSave = false;
-    updateSaveButton();
     renderTable();
     showToast(`✓ ${nChanges} change${nChanges>1?'s':''} saved`);
   } catch (e) {
@@ -628,10 +633,11 @@ function closePasswordModal() {
 async function submitPassword() {
   const pw = document.getElementById('passwordInput').value;
   if (!pw) return;
+  const wasPending = _pendingSave;
   sessionStorage.setItem('write_password', pw);
   document.getElementById('passwordInput').value = '';
   closePasswordModal();
-  if (_pendingSave) await _doSave(pw);
+  if (wasPending) await _doSave(pw);
 }
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
@@ -640,11 +646,12 @@ function esc(s) {
 }
 function showToast(msg, err=false) {
   const el = document.createElement('div');
-  el.className = `fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium text-white
+  el.className = `fixed bottom-5 right-5 z-50 px-4 py-3 rounded-lg shadow-lg text-sm font-medium text-white cursor-pointer
     ${err?'bg-red-600':'bg-green-600'}`;
   el.textContent = msg;
+  el.onclick = () => el.remove();
   document.body.appendChild(el);
-  setTimeout(()=>el.remove(), 4500);
+  setTimeout(()=>el.remove(), err ? 8000 : 5000);
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
