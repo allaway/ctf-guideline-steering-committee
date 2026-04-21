@@ -1,0 +1,10 @@
+creds.yaml
+.env
+*.env
+pubmed_cache.json
+pubmed_cache_v2.json
+classification_results.json
+classification_results_v2.json
+__pycache__/
+*.pyc
+~$*.xlsx

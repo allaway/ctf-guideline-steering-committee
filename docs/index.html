@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NF Guideline Literature Review · CTF Steering Committee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .drawer { transition: transform 0.25s ease; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] > summary .chevron { transform: rotate(90deg); }
+    .chevron { display: inline-block; transition: transform 0.15s; }
+    tr.modified { background-color: #fffbeb !important; }
+    tr.modified:hover { background-color: #fef3c7 !important; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+
+<!-- ── Header ──────────────────────────────────────────────────────────────── -->
+<header class="bg-[#1F4E79] text-white px-6 py-3 flex items-center gap-4 shadow-lg sticky top-0 z-10">
+  <div class="flex-shrink-0">
+    <h1 class="text-base font-bold leading-tight">NF Guideline Literature Review</h1>
+    <p class="text-blue-200 text-xs">CTF Guideline Steering Committee</p>
+  </div>
+  <input id="searchInput" type="search" placeholder="Search titles or journals…"
+    class="flex-1 max-w-sm px-3 py-1.5 rounded text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300">
+  <div class="flex items-center gap-2 ml-auto">
+    <button id="saveBtn" onclick="saveAllChanges()"
+      class="hidden items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white px-3 py-1.5 rounded text-sm font-medium transition">
+      Save <span id="changeBadge" class="bg-green-700 text-white text-xs px-1.5 py-0.5 rounded-full">0</span>
+    </button>
+    <button onclick="promptToken()" title="Set GitHub token"
+      class="text-blue-300 hover:text-white text-xs underline">Token</button>
+  </div>
+</header>
+
+<!-- ── Filter bar ────────────────────────────────────────────────────────── -->
+<div class="bg-white border-b px-6 py-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm sticky top-[52px] z-10 shadow-sm">
+  <span id="statsText" class="text-gray-400 text-xs mr-1">Loading…</span>
+  <div class="flex gap-3 text-xs">
+    <label class="flex items-center gap-1 cursor-pointer">
+      <input type="radio" name="glFilter" value="all" onchange="applyFilters()" checked class="accent-[#1F4E79]"> All
+    </label>
+    <label class="flex items-center gap-1 cursor-pointer">
+      <input type="radio" name="glFilter" value="yes" onchange="applyFilters()" class="accent-[#1F4E79]"> Guidelines
+    </label>
+    <label class="flex items-center gap-1 cursor-pointer">
+      <input type="radio" name="glFilter" value="no" onchange="applyFilters()" class="accent-[#1F4E79]"> Non-guidelines
+    </label>
+  </div>
+  <select id="docTypeFilter" onchange="applyFilters()"
+    class="border rounded px-2 py-1 text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-400">
+    <option value="">All document types</option>
+    <option>Clinical practice guideline</option>
+    <option>Consensus statement</option>
+    <option>Evidence-based recommendation</option>
+    <option>Expert recommendation</option>
+    <option>Practice advisory</option>
+    <option>Not a guideline or recommendation</option>
+  </select>
+  <select id="conditionFilter" onchange="applyFilters()"
+    class="border rounded px-2 py-1 text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-400">
+    <option value="">All conditions</option>
+    <option>NF1</option>
+    <option>NF2-SWN</option>
+    <option>LZTR1-SWN</option>
+    <option>SMARCB1-SWN</option>
+  </select>
+  <select id="focusFilter" onchange="applyFilters()"
+    class="border rounded px-2 py-1 text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-400">
+    <option value="">All focus areas</option>
+    <option value="focus_diagnosis">Diagnosis</option>
+    <option value="focus_treatment">Treatment</option>
+    <option value="focus_surveillance_management">Surveillance</option>
+    <option value="focus_genetic_testing">Genetic Testing</option>
+  </select>
+</div>
+
+<!-- ── Main ──────────────────────────────────────────────────────────────── -->
+<main class="px-4 py-3 max-w-full">
+
+  <!-- Loading -->
+  <div id="loadingState" class="text-center py-24 text-gray-400">
+    <div class="text-5xl mb-4 animate-pulse">⏳</div>
+    <p>Loading papers from GitHub…</p>
+  </div>
+
+  <!-- Table -->
+  <div id="tableContainer" class="hidden">
+    <div class="overflow-x-auto rounded-lg shadow ring-1 ring-black ring-opacity-5">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-[#1F4E79] text-white text-xs">
+            <th class="px-3 py-2.5 text-left font-semibold w-20">PMID</th>
+            <th class="px-3 py-2.5 text-left font-semibold">Title</th>
+            <th class="px-3 py-2.5 text-left font-semibold w-12">Year</th>
+            <th class="px-3 py-2.5 text-left font-semibold w-40">Journal</th>
+            <th class="px-3 py-2.5 text-left font-semibold w-44">Document Type</th>
+            <th class="px-3 py-2.5 text-left font-semibold w-32">Conditions</th>
+            <th class="px-3 py-2.5 text-center font-semibold w-20">Guideline</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody" class="divide-y divide-gray-100 bg-white"></tbody>
+      </table>
+    </div>
+    <div class="flex items-center justify-between mt-3 text-xs text-gray-500 px-1">
+      <span id="pageInfo"></span>
+      <div class="flex gap-1.5">
+        <button onclick="changePage(-1)" id="prevBtn"
+          class="px-3 py-1.5 border rounded hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition">← Prev</button>
+        <button onclick="changePage(1)" id="nextBtn"
+          class="px-3 py-1.5 border rounded hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition">Next →</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ── Edit Drawer ────────────────────────────────────────────────────────── -->
+<div id="overlay" onclick="closeDrawer()" class="fixed inset-0 bg-black/30 z-20 hidden"></div>
+<aside id="drawer"
+  class="drawer fixed top-0 right-0 h-full w-[500px] max-w-full bg-white shadow-2xl z-30 flex flex-col translate-x-full">
+  <div class="flex items-center justify-between px-4 py-3 border-b flex-shrink-0 bg-white">
+    <h2 class="font-semibold text-gray-900 text-sm">Edit Classification</h2>
+    <button onclick="closeDrawer()" class="text-gray-400 hover:text-gray-700 text-xl leading-none w-7 h-7 flex items-center justify-center rounded hover:bg-gray-100">×</button>
+  </div>
+  <div id="drawerContent" class="overflow-y-auto flex-1 px-4 py-4 text-sm"></div>
+</aside>
+
+<!-- ── Token Modal ────────────────────────────────────────────────────────── -->
+<div id="tokenModal" class="fixed inset-0 bg-black/50 z-40 hidden items-center justify-center">
+  <div class="bg-white rounded-xl shadow-2xl p-6 w-[420px] mx-4">
+    <h2 class="font-bold text-gray-900 mb-1">GitHub Personal Access Token</h2>
+    <p class="text-xs text-gray-500 mb-1">Required to save changes back to the repository.</p>
+    <p class="text-xs text-gray-500 mb-4">Generate a token at <strong>GitHub → Settings → Developer settings → Personal access tokens</strong> with <code class="bg-gray-100 px-1 rounded">Contents: Read & Write</code> permission. Stored in this browser session only.</p>
+    <input id="tokenInput" type="password" placeholder="github_pat_… or ghp_…"
+      class="w-full border rounded px-3 py-2 text-sm font-mono mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    <div class="flex gap-2">
+      <button onclick="submitToken()" class="flex-1 bg-[#1F4E79] text-white rounded py-2 text-sm font-medium hover:bg-[#2E4057] transition">
+        Save Token
+      </button>
+      <button onclick="closeTokenModal()" class="flex-1 border rounded py-2 text-sm text-gray-700 hover:bg-gray-50 transition">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────────────────────────────────
+const CONFIG = {
+  owner:    'rallaway',
+  repo:     'ctf-guideline-steering-committee',
+  branch:   'main',
+  dataFile: 'classifications_web.json',
+};
+const RAW_URL = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${CONFIG.dataFile}`;
+const API_BASE = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}`;
+
+// ── Taxonomy ─────────────────────────────────────────────────────────────────
+const DOCUMENT_TYPES = [
+  'Clinical practice guideline',
+  'Consensus statement',
+  'Evidence-based recommendation',
+  'Expert recommendation',
+  'Practice advisory',
+  'Not a guideline or recommendation',
+];
+const TAXONOMY = {
+  'NF1':       ['Optic pathway glioma','Non-optic pathway glioma','High grade glioma','Low grade glioma',
+                 'Cutaneous neurofibroma','Diffuse infiltrating neurofibroma','Plexiform neurofibroma',
+                 'Atypical neurofibroma','ANNUBP','MPNST / triton tumor','Scoliosis','Bone dysplasia',
+                 'Vascular disease / anomaly','Cognitive','Behavioral','Learning'],
+  'NF2-SWN':   ['Vestibular schwannoma','Meningioma','Peripheral schwannoma','Paraspinal schwannoma',
+                 'Ependymoma','Hearing loss / Deafness','Facial weakness','Neuropathy'],
+  'LZTR1-SWN': ['Pain','Intracranial schwannoma','Peripheral schwannoma','Paraspinal schwannoma'],
+  'SMARCB1-SWN':['Pain','Peripheral schwannoma','Paraspinal schwannoma','Meningioma'],
+};
+const MANIFFIELDS = {
+  'NF1': 'nf1_manifestations', 'NF2-SWN': 'nf2_swn_manifestations',
+  'LZTR1-SWN': 'lztr1_swn_manifestations', 'SMARCB1-SWN': 'smarcb1_swn_manifestations',
+};
+const METHODOLOGIES = [
+  'Systematic review & meta-analysis','GRADE (Evidence-to-Decision)',
+  'Diagnostic test appraisal','ACMG/AMP variant classification framework',
+  'Delphi method (modified)','Nominal Group Technique (NGT)',
+  'RAND/UCLA Appropriateness Method','Consensus conference / expert panel',
+  'Living guideline model','AGREE II (appraisal tool)',
+  'Patient/public & qualitative methods',
+];
+const STRENGTH_LEVELS = ['Strong','Moderate','Weak/Conditional','Expert opinion only','Not assessable'];
+const DOC_TYPE_PILL = {
+  'Clinical practice guideline':       'bg-blue-100 text-blue-800',
+  'Consensus statement':               'bg-teal-100 text-teal-800',
+  'Evidence-based recommendation':     'bg-purple-100 text-purple-800',
+  'Expert recommendation':             'bg-orange-100 text-orange-800',
+  'Practice advisory':                 'bg-yellow-100 text-yellow-800',
+  'Not a guideline or recommendation': 'bg-gray-100 text-gray-500',
+};
+const PAGE_SIZE = 50;
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let allData = {};
+let filteredPmids = [];
+let currentPage = 1;
+let localChanges = {}; // pmid → modified classification
+let editingPmid = null;
+let editBuffer = {};   // live edits in the open drawer (not yet applied)
+
+// ── Data loading ──────────────────────────────────────────────────────────────
+async function loadData() {
+  const token = getToken();
+  try {
+    let data;
+    if (token) {
+      const res = await fetch(`${API_BASE}/contents/${CONFIG.dataFile}`, {
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.raw+json' }
+      });
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      data = await res.json();
+    } else {
+      const res = await fetch(RAW_URL + '?_=' + Date.now());
+      if (res.status === 404 || res.status === 403) {
+        showAuthRequired(); return;
+      }
+      if (!res.ok) throw new Error(`${res.status}`);
+      data = await res.json();
+    }
+    allData = data;
+    applyFilters();
+    document.getElementById('loadingState').classList.add('hidden');
+    document.getElementById('tableContainer').classList.remove('hidden');
+  } catch (e) {
+    document.getElementById('loadingState').innerHTML = `
+      <div class="text-5xl mb-4">❌</div>
+      <p class="text-red-500 mb-3">Failed to load: ${e.message}</p>
+      <button onclick="loadData()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Retry</button>`;
+  }
+}
+
+function showAuthRequired() {
+  document.getElementById('loadingState').innerHTML = `
+    <div class="text-5xl mb-4">🔒</div>
+    <p class="text-gray-600 mb-4">A GitHub token is required to access this repository.</p>
+    <button onclick="promptToken()" class="px-5 py-2 bg-[#1F4E79] text-white rounded font-medium hover:bg-[#2E4057]">
+      Enter GitHub Token
+    </button>`;
+}
+
+// ── Filtering & sorting ───────────────────────────────────────────────────────
+function applyFilters() {
+  const q = document.getElementById('searchInput')?.value.toLowerCase() || '';
+  const glFilter = document.querySelector('input[name="glFilter"]:checked')?.value || 'all';
+  const dtFilter = document.getElementById('docTypeFilter')?.value || '';
+  const condFilter = document.getElementById('conditionFilter')?.value || '';
+  const focusFilter = document.getElementById('focusFilter')?.value || '';
+
+  filteredPmids = Object.entries(allData).filter(([pmid, d]) => {
+    const c = localChanges[pmid] ?? d.classification ?? {};
+    const pub = d.pubmed ?? {};
+    if (q && !(pub.title||'').toLowerCase().includes(q) && !(pub.journal||'').toLowerCase().includes(q)) return false;
+    if (glFilter === 'yes' && !c.is_guideline_or_recommendation) return false;
+    if (glFilter === 'no'  &&  c.is_guideline_or_recommendation) return false;
+    if (dtFilter   && c.document_type !== dtFilter) return false;
+    if (condFilter && !(c.conditions||[]).includes(condFilter)) return false;
+    if (focusFilter && !c[focusFilter]) return false;
+    return true;
+  }).sort(([,a],[,b]) => {
+    const ac = localChanges[Object.keys(localChanges).find(k=>allData[k]===a)] ?? a.classification ?? {};
+    const bc = localChanges[Object.keys(localChanges).find(k=>allData[k]===b)] ?? b.classification ?? {};
+    const ag = ac.is_guideline_or_recommendation, bg = bc.is_guideline_or_recommendation;
+    if (ag !== bg) return ag ? -1 : 1;
+    return parseInt(b.pubmed?.year||0) - parseInt(a.pubmed?.year||0);
+  }).map(([pmid]) => pmid);
+
+  currentPage = 1;
+  renderTable();
+  updateStats();
+}
+
+// ── Table rendering ───────────────────────────────────────────────────────────
+function renderTable() {
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const page = filteredPmids.slice(start, start + PAGE_SIZE);
+  document.getElementById('tableBody').innerHTML = page.map(pmid => {
+    const d = allData[pmid];
+    const c = localChanges[pmid] ?? d.classification ?? {};
+    const pub = d.pubmed ?? {};
+    const isGl = c.is_guideline_or_recommendation;
+    const modified = !!localChanges[pmid];
+    const pill = DOC_TYPE_PILL[c.document_type] ?? 'bg-gray-100 text-gray-500';
+    const dtShort = (c.document_type||'').replace('Not a guideline or recommendation','Not a guideline');
+    const conds = (c.conditions||[]).join(', ');
+    return `<tr onclick="openDrawer('${pmid}')" ${modified?'class="modified"':'class="hover:bg-blue-50"'}
+      style="cursor:pointer">
+      <td class="px-3 py-2 text-gray-400 text-xs font-mono whitespace-nowrap">${pmid}</td>
+      <td class="px-3 py-2 max-w-xs">
+        <div class="line-clamp-2 text-gray-900 leading-snug">${esc(pub.title||pmid)}</div>
+        ${modified ? '<span class="text-[10px] bg-amber-200 text-amber-800 px-1.5 py-0.5 rounded font-medium">edited</span>' : ''}
+      </td>
+      <td class="px-3 py-2 text-gray-500 text-xs">${pub.year||''}</td>
+      <td class="px-3 py-2 text-gray-500 text-xs leading-snug">${esc((pub.journal||'').substring(0,40))}${(pub.journal||'').length>40?'…':''}</td>
+      <td class="px-3 py-2"><span class="text-xs px-2 py-0.5 rounded-full font-medium ${pill}">${esc(dtShort)}</span></td>
+      <td class="px-3 py-2 text-xs text-gray-600">${esc(conds)}</td>
+      <td class="px-3 py-2 text-center">
+        <span class="text-xs font-semibold px-2 py-0.5 rounded ${isGl?'bg-green-100 text-green-800':'bg-red-50 text-red-400'}">
+          ${isGl?'Yes':'No'}
+        </span>
+      </td>
+    </tr>`;
+  }).join('');
+
+  const total = filteredPmids.length, totalPages = Math.ceil(total/PAGE_SIZE);
+  document.getElementById('pageInfo').textContent =
+    `${start+1}–${Math.min(start+PAGE_SIZE,total)} of ${total}`;
+  document.getElementById('prevBtn').disabled = currentPage <= 1;
+  document.getElementById('nextBtn').disabled = currentPage >= totalPages;
+}
+
+function changePage(d) {
+  const tp = Math.ceil(filteredPmids.length/PAGE_SIZE);
+  currentPage = Math.max(1, Math.min(currentPage+d, tp));
+  renderTable();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateStats() {
+  const total = Object.keys(allData).length;
+  const gl = Object.values(allData).filter(d=>(localChanges[Object.keys(allData).find(k=>allData[k]===d)] ?? d.classification)?.is_guideline_or_recommendation).length;
+  const nChanges = Object.keys(localChanges).length;
+  document.getElementById('statsText').textContent =
+    `${total} papers · ${gl} guidelines/recs${nChanges ? ` · ${nChanges} unsaved` : ''}`;
+}
+
+// ── Edit Drawer ───────────────────────────────────────────────────────────────
+function openDrawer(pmid) {
+  editingPmid = pmid;
+  editBuffer = JSON.parse(JSON.stringify(localChanges[pmid] ?? allData[pmid].classification ?? {}));
+  renderDrawer();
+  document.getElementById('drawer').classList.remove('translate-x-full');
+  document.getElementById('overlay').classList.remove('hidden');
+}
+
+function closeDrawer() {
+  document.getElementById('drawer').classList.add('translate-x-full');
+  document.getElementById('overlay').classList.add('hidden');
+  editingPmid = null;
+}
+
+function renderDrawer() {
+  const pmid = editingPmid;
+  const d = allData[pmid];
+  const pub = d.pubmed ?? {};
+  const c = editBuffer;
+
+  const dtOptions = DOCUMENT_TYPES.map(t=>
+    `<option value="${esc(t)}" ${c.document_type===t?'selected':''}>${esc(t)}</option>`).join('');
+
+  const condBoxes = ['NF1','NF2-SWN','LZTR1-SWN','SMARCB1-SWN','ALL'].map(cnd=>`
+    <label class="flex items-center gap-2 cursor-pointer text-xs">
+      <input type="checkbox" class="w-3.5 h-3.5 accent-[#1F4E79]" ${(c.conditions||[]).includes(cnd)?'checked':''}
+        onchange="ebUpdateList('conditions','${cnd}',this.checked)">
+      ${cnd}
+    </label>`).join('');
+
+  const focusBoxes = [
+    ['focus_diagnosis','Diagnosis'],['focus_treatment','Treatment'],
+    ['focus_surveillance_management','Surveillance / Management'],['focus_genetic_testing','Genetic Testing'],
+  ].map(([k,lbl])=>`
+    <label class="flex items-center gap-2 cursor-pointer text-xs">
+      <input type="checkbox" class="w-3.5 h-3.5 accent-[#1F4E79]" ${c[k]?'checked':''}
+        onchange="ebSet('${k}',this.checked)">
+      ${lbl}
+    </label>`).join('');
+
+  const methodBoxes = METHODOLOGIES.map(m=>`
+    <label class="flex items-center gap-2 cursor-pointer text-xs py-0.5">
+      <input type="checkbox" class="w-3 h-3 accent-[#1F4E79]" ${(c.methodologies||[]).includes(m)?'checked':''}
+        onchange="ebUpdateList('methodologies','${esc(m)}',this.checked)">
+      ${esc(m)}
+    </label>`).join('');
+
+  const strengthOpts = ['<option value="">(not assessed)</option>',
+    ...STRENGTH_LEVELS.map(s=>`<option ${c.strength_of_evidence===s?'selected':''}>${esc(s)}</option>`)
+  ].join('');
+
+  function manifSection(condKey) {
+    const field = MANIFFIELDS[condKey];
+    const boxes = TAXONOMY[condKey].map(m=>`
+      <label class="flex items-center gap-2 cursor-pointer text-xs py-0.5">
+        <input type="checkbox" class="w-3 h-3 accent-[#1F4E79]" ${(c[field]||[]).includes(m)?'checked':''}
+          onchange="ebUpdateList('${field}','${esc(m)}',this.checked)">
+        ${esc(m)}
+      </label>`).join('');
+    return `<details class="mt-1 mb-2">
+      <summary class="text-xs font-semibold text-gray-500 uppercase tracking-wide cursor-pointer select-none flex items-center gap-1">
+        <span class="chevron text-gray-400">▶</span> ${condKey} Manifestations
+      </summary>
+      <div class="mt-1.5 ml-4">${boxes}</div>
+    </details>`;
+  }
+
+  document.getElementById('drawerContent').innerHTML = `
+    <!-- Paper info -->
+    <div class="bg-gray-50 border rounded-lg p-3 mb-4 text-xs text-gray-600 leading-relaxed">
+      <p class="font-semibold text-gray-900 text-sm mb-1 leading-snug">${esc(pub.title||pmid)}</p>
+      <p>${pub.year||''}${pub.year&&pub.journal?' · ':''}${esc(pub.journal||'')} · PMID ${pmid}</p>
+      ${pub.abstract ? `<details class="mt-1.5"><summary class="text-blue-600 cursor-pointer hover:underline">Show abstract</summary>
+        <p class="mt-1.5 text-gray-600 leading-relaxed">${esc(pub.abstract.substring(0,800))}${pub.abstract.length>800?'…':''}</p>
+      </details>` : ''}
+    </div>
+
+    <!-- Document type -->
+    <div class="mb-4">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Document Type</label>
+      <select onchange="ebDocType(this.value)"
+        class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white">
+        ${dtOptions}
+      </select>
+      <p id="glIndicator" class="mt-1 text-xs ${c.is_guideline_or_recommendation ? 'text-green-600' : 'text-red-400'}">
+        ${c.is_guideline_or_recommendation ? '✓ Counts as guideline/recommendation' : '✗ Not a guideline/recommendation'}
+      </p>
+    </div>
+
+    <!-- Conditions -->
+    <div class="mb-4">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Conditions</label>
+      <div class="flex flex-wrap gap-x-4 gap-y-1.5">${condBoxes}</div>
+    </div>
+
+    <!-- Manifestations -->
+    <div class="mb-4">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Manifestations</label>
+      ${manifSection('NF1')}
+      ${manifSection('NF2-SWN')}
+      ${manifSection('LZTR1-SWN')}
+      ${manifSection('SMARCB1-SWN')}
+    </div>
+
+    <!-- Focus areas -->
+    <div class="mb-4">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Focus Areas</label>
+      <div class="grid grid-cols-2 gap-y-1.5">${focusBoxes}</div>
+    </div>
+
+    <!-- Methodologies -->
+    <details class="mb-4">
+      <summary class="text-xs font-semibold text-gray-500 uppercase tracking-wide cursor-pointer select-none flex items-center gap-1 mb-1">
+        <span class="chevron text-gray-400">▶</span> Methodologies
+      </summary>
+      <div class="mt-2 ml-4">${methodBoxes}</div>
+    </details>
+
+    <!-- Strength -->
+    <div class="mb-4">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Strength of Evidence</label>
+      <select onchange="ebSet('strength_of_evidence',this.value)"
+        class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white">
+        ${strengthOpts}
+      </select>
+    </div>
+
+    <!-- Org -->
+    <div class="mb-4">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Affiliated Organization</label>
+      <input type="text" value="${esc(c.affiliated_org||'')}" oninput="ebSet('affiliated_org',this.value)"
+        placeholder="e.g. ERN GENTURIS, EANO, AAP, CADTH…"
+        class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Notes -->
+    <div class="mb-5">
+      <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Notes</label>
+      <textarea rows="3" oninput="ebSet('notes',this.value)"
+        class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+        placeholder="Borderline cases, context, corrections…">${esc(c.notes||'')}</textarea>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex gap-2 pb-4">
+      <button onclick="applyEdit()" class="flex-1 bg-[#1F4E79] hover:bg-[#2E4057] text-white py-2.5 rounded-lg text-sm font-medium transition">
+        Apply Changes
+      </button>
+      <button onclick="closeDrawer()" class="px-4 border rounded-lg text-sm text-gray-600 hover:bg-gray-50 transition">
+        Cancel
+      </button>
+    </div>
+  `;
+}
+
+// ── Edit buffer helpers (called from drawer HTML) ─────────────────────────────
+function ebDocType(val) {
+  editBuffer.document_type = val;
+  editBuffer.is_guideline_or_recommendation = val !== 'Not a guideline or recommendation';
+  const el = document.getElementById('glIndicator');
+  if (el) {
+    el.textContent = editBuffer.is_guideline_or_recommendation
+      ? '✓ Counts as guideline/recommendation' : '✗ Not a guideline/recommendation';
+    el.className = `mt-1 text-xs ${editBuffer.is_guideline_or_recommendation ? 'text-green-600' : 'text-red-400'}`;
+  }
+}
+function ebSet(key, val) { editBuffer[key] = val; }
+function ebUpdateList(field, item, checked) {
+  if (!editBuffer[field]) editBuffer[field] = [];
+  if (checked && !editBuffer[field].includes(item)) editBuffer[field].push(item);
+  else if (!checked) editBuffer[field] = editBuffer[field].filter(x => x !== item);
+}
+
+function applyEdit() {
+  if (!editingPmid) return;
+  const orig = JSON.stringify(allData[editingPmid].classification);
+  const edited = JSON.stringify(editBuffer);
+  if (orig !== edited) {
+    localChanges[editingPmid] = JSON.parse(JSON.stringify(editBuffer));
+  } else {
+    delete localChanges[editingPmid];
+  }
+  updateSaveButton();
+  renderTable();
+  closeDrawer();
+}
+
+function updateSaveButton() {
+  const n = Object.keys(localChanges).length;
+  document.getElementById('changeBadge').textContent = n;
+  const btn = document.getElementById('saveBtn');
+  if (n > 0) { btn.classList.remove('hidden'); btn.classList.add('flex'); }
+  else        { btn.classList.add('hidden');    btn.classList.remove('flex'); }
+  updateStats();
+}
+
+// ── GitHub saving (Git Data API — handles large files) ────────────────────────
+async function saveAllChanges() {
+  const token = getToken();
+  if (!token) { promptToken(); return; }
+
+  const btn = document.getElementById('saveBtn');
+  btn.textContent = '⏳ Saving…';
+  btn.disabled = true;
+
+  try {
+    // Merge changes into full dataset
+    const merged = {};
+    for (const [pmid, d] of Object.entries(allData)) {
+      merged[pmid] = { pubmed: d.pubmed, classification: localChanges[pmid] ?? d.classification };
+    }
+    const content = JSON.stringify(merged, null, 2);
+    const nChanges = Object.keys(localChanges).length;
+    const msg = `Update ${nChanges} classification${nChanges>1?'s':''} via web review tool`;
+
+    await gitDataApiPut(token, CONFIG.dataFile, content, msg);
+
+    // Commit succeeded — update local state
+    for (const [pmid, c] of Object.entries(localChanges)) allData[pmid].classification = c;
+    localChanges = {};
+    updateSaveButton();
+    renderTable();
+    showToast(`✓ ${nChanges} change${nChanges>1?'s':''} saved to GitHub`);
+  } catch(e) {
+    showToast(`❌ Save failed: ${e.message}`, true);
+    const n = Object.keys(localChanges).length;
+    btn.innerHTML = `Save <span id="changeBadge" class="bg-green-700 text-white text-xs px-1.5 py-0.5 rounded-full">${n}</span>`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function gitDataApiPut(token, filePath, content, message) {
+  const h = { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' };
+
+  // 1. Get latest commit SHA
+  const refRes = await fetch(`${API_BASE}/git/ref/heads/${CONFIG.branch}`, {headers:h});
+  if (!refRes.ok) throw new Error(`Could not get branch ref: ${refRes.status}`);
+  const {object:{sha:latestSha}} = await refRes.json();
+
+  // 2. Get tree SHA from commit
+  const commitRes = await fetch(`${API_BASE}/git/commits/${latestSha}`, {headers:h});
+  const {tree:{sha:baseTreeSha}} = await commitRes.json();
+
+  // 3. Create blob (UTF-8 encoded)
+  const bytes = new TextEncoder().encode(content);
+  const b64 = btoa(Array.from(bytes, b => String.fromCharCode(b)).join(''));
+  const blobRes = await fetch(`${API_BASE}/git/blobs`, {
+    method:'POST', headers:h, body: JSON.stringify({content:b64, encoding:'base64'})
+  });
+  if (!blobRes.ok) throw new Error(`Blob creation failed: ${blobRes.status}`);
+  const {sha:blobSha} = await blobRes.json();
+
+  // 4. Create new tree
+  const treeRes = await fetch(`${API_BASE}/git/trees`, {
+    method:'POST', headers:h,
+    body: JSON.stringify({base_tree:baseTreeSha, tree:[{path:filePath, mode:'100644', type:'blob', sha:blobSha}]})
+  });
+  if (!treeRes.ok) throw new Error(`Tree creation failed: ${treeRes.status}`);
+  const {sha:newTreeSha} = await treeRes.json();
+
+  // 5. Create commit
+  const newCommitRes = await fetch(`${API_BASE}/git/commits`, {
+    method:'POST', headers:h,
+    body: JSON.stringify({message, tree:newTreeSha, parents:[latestSha]})
+  });
+  if (!newCommitRes.ok) throw new Error(`Commit creation failed: ${newCommitRes.status}`);
+  const {sha:newCommitSha} = await newCommitRes.json();
+
+  // 6. Update branch ref
+  const updateRes = await fetch(`${API_BASE}/git/refs/heads/${CONFIG.branch}`, {
+    method:'PATCH', headers:h, body: JSON.stringify({sha:newCommitSha})
+  });
+  if (!updateRes.ok) throw new Error(`Branch update failed: ${updateRes.status}`);
+}
+
+// ── Token management ──────────────────────────────────────────────────────────
+function getToken() { return sessionStorage.getItem('gh_token'); }
+function promptToken() {
+  document.getElementById('tokenModal').classList.remove('hidden');
+  document.getElementById('tokenModal').classList.add('flex');
+  setTimeout(() => document.getElementById('tokenInput').focus(), 50);
+}
+function closeTokenModal() {
+  document.getElementById('tokenModal').classList.add('hidden');
+  document.getElementById('tokenModal').classList.remove('flex');
+}
+function submitToken() {
+  const t = document.getElementById('tokenInput').value.trim();
+  if (!t) return;
+  sessionStorage.setItem('gh_token', t);
+  document.getElementById('tokenInput').value = '';
+  closeTokenModal();
+  if (Object.keys(allData).length === 0) loadData();
+  else showToast('✓ Token saved for this session');
+}
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function showToast(msg, err=false) {
+  const el = document.createElement('div');
+  el.className = `fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium text-white
+    ${err?'bg-red-600':'bg-green-600'}`;
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(), 4500);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.getElementById('searchInput').addEventListener('input', () => {
+  clearTimeout(window._st);
+  window._st = setTimeout(applyFilters, 250);
+});
+document.getElementById('tokenInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitToken();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && editingPmid) closeDrawer();
+});
+
+loadData();
+</script>
+</body>
+</html>
