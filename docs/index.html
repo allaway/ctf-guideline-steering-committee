@@ -31,8 +31,6 @@
       class="hidden items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white px-3 py-1.5 rounded text-sm font-medium transition">
       Save <span id="changeBadge" class="bg-green-700 text-white text-xs px-1.5 py-0.5 rounded-full">0</span>
     </button>
-    <button onclick="promptToken()" title="Set GitHub token"
-      class="text-blue-300 hover:text-white text-xs underline">Token</button>
   </div>
 </header>
 
@@ -128,19 +126,19 @@
   <div id="drawerContent" class="overflow-y-auto flex-1 px-4 py-4 text-sm"></div>
 </aside>
 
-<!-- ── Token Modal ────────────────────────────────────────────────────────── -->
-<div id="tokenModal" class="fixed inset-0 bg-black/50 z-40 hidden items-center justify-center">
-  <div class="bg-white rounded-xl shadow-2xl p-6 w-[420px] mx-4">
-    <h2 class="font-bold text-gray-900 mb-1">GitHub Personal Access Token</h2>
-    <p class="text-xs text-gray-500 mb-1">Required to save changes back to the repository.</p>
-    <p class="text-xs text-gray-500 mb-4">Generate a token at <strong>GitHub → Settings → Developer settings → Personal access tokens</strong> with <code class="bg-gray-100 px-1 rounded">Contents: Read & Write</code> permission. Stored in this browser session only.</p>
-    <input id="tokenInput" type="password" placeholder="github_pat_… or ghp_…"
-      class="w-full border rounded px-3 py-2 text-sm font-mono mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+<!-- ── Password Modal ─────────────────────────────────────────────────────── -->
+<div id="passwordModal" class="fixed inset-0 bg-black/50 z-40 hidden items-center justify-center">
+  <div class="bg-white rounded-xl shadow-2xl p-6 w-[380px] mx-4">
+    <h2 class="font-bold text-gray-900 mb-1">Enter password to save</h2>
+    <p class="text-xs text-gray-500 mb-4">Contact Robert Allaway for the committee password.</p>
+    <input id="passwordInput" type="password" placeholder="Password"
+      class="w-full border rounded px-3 py-2 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    <p id="passwordError" class="text-xs text-red-500 mb-2 hidden">Incorrect password — please try again.</p>
     <div class="flex gap-2">
-      <button onclick="submitToken()" class="flex-1 bg-[#1F4E79] text-white rounded py-2 text-sm font-medium hover:bg-[#2E4057] transition">
-        Save Token
+      <button onclick="submitPassword()" class="flex-1 bg-[#1F4E79] text-white rounded py-2 text-sm font-medium hover:bg-[#2E4057] transition">
+        Save Changes
       </button>
-      <button onclick="closeTokenModal()" class="flex-1 border rounded py-2 text-sm text-gray-700 hover:bg-gray-50 transition">
+      <button onclick="closePasswordModal()" class="flex-1 border rounded py-2 text-sm text-gray-700 hover:bg-gray-50 transition">
         Cancel
       </button>
     </div>
@@ -149,14 +147,7 @@
 
 <script>
 // ── Config ──────────────────────────────────────────────────────────────────
-const CONFIG = {
-  owner:    'allaway',
-  repo:     'ctf-guideline-steering-committee',
-  branch:   'main',
-  dataFile: 'classifications_web.json',
-};
-const RAW_URL = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${CONFIG.dataFile}`;
-const API_BASE = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}`;
+const SAVE_ENDPOINT = '/.netlify/functions/save';
 
 // ── Taxonomy ─────────────────────────────────────────────────────────────────
 const DOCUMENT_TYPES = [
@@ -210,42 +201,19 @@ let editBuffer = {};   // live edits in the open drawer (not yet applied)
 
 // ── Data loading ──────────────────────────────────────────────────────────────
 async function loadData() {
-  const token = getToken();
   try {
-    let data;
-    if (token) {
-      const res = await fetch(`${API_BASE}/contents/${CONFIG.dataFile}`, {
-        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.raw+json' }
-      });
-      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-      data = await res.json();
-    } else {
-      const res = await fetch(RAW_URL + '?_=' + Date.now());
-      if (res.status === 404 || res.status === 403) {
-        showAuthRequired(); return;
-      }
-      if (!res.ok) throw new Error(`${res.status}`);
-      data = await res.json();
-    }
-    allData = data;
+    const res = await fetch('/classifications_web.json?_=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    allData = await res.json();
     applyFilters();
     document.getElementById('loadingState').classList.add('hidden');
     document.getElementById('tableContainer').classList.remove('hidden');
   } catch (e) {
     document.getElementById('loadingState').innerHTML = `
       <div class="text-5xl mb-4">❌</div>
-      <p class="text-red-500 mb-3">Failed to load: ${e.message}</p>
+      <p class="text-red-500 mb-3">Failed to load data: ${e.message}</p>
       <button onclick="loadData()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Retry</button>`;
   }
-}
-
-function showAuthRequired() {
-  document.getElementById('loadingState').innerHTML = `
-    <div class="text-5xl mb-4">🔒</div>
-    <p class="text-gray-600 mb-4">A GitHub token is required to access this repository.</p>
-    <button onclick="promptToken()" class="px-5 py-2 bg-[#1F4E79] text-white rounded font-medium hover:bg-[#2E4057]">
-      Enter GitHub Token
-    </button>`;
 }
 
 // ── Filtering & sorting ───────────────────────────────────────────────────────
@@ -586,105 +554,84 @@ function updateSaveButton() {
   updateStats();
 }
 
-// ── GitHub saving (Git Data API — handles large files) ────────────────────────
+// ── Saving via Netlify function ───────────────────────────────────────────────
 async function saveAllChanges() {
-  const token = getToken();
-  if (!token) { promptToken(); return; }
+  const password = getPassword();
+  if (!password) { promptPassword(); return; }
+  _pendingSave = true;
+  await _doSave(password);
+}
 
+let _pendingSave = false;
+
+async function _doSave(password) {
   const btn = document.getElementById('saveBtn');
-  btn.textContent = '⏳ Saving…';
+  btn.innerHTML = '⏳ Saving…';
   btn.disabled = true;
 
+  const merged = {};
+  for (const [pmid, d] of Object.entries(allData)) {
+    merged[pmid] = { pubmed: d.pubmed, classification: localChanges[pmid] ?? d.classification };
+  }
+  const nChanges = Object.keys(localChanges).length;
+
   try {
-    // Merge changes into full dataset
-    const merged = {};
-    for (const [pmid, d] of Object.entries(allData)) {
-      merged[pmid] = { pubmed: d.pubmed, classification: localChanges[pmid] ?? d.classification };
+    const res = await fetch(SAVE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password,
+        content: JSON.stringify(merged, null, 2),
+        message: `Update ${nChanges} classification${nChanges>1?'s':''} via web review tool`,
+      }),
+    });
+    const json = await res.json();
+    if (!res.ok) {
+      if (res.status === 401) {
+        // Wrong password — show modal again with error
+        sessionStorage.removeItem('write_password');
+        document.getElementById('passwordError').classList.remove('hidden');
+        promptPassword();
+        return;
+      }
+      throw new Error(json.error || `HTTP ${res.status}`);
     }
-    const content = JSON.stringify(merged, null, 2);
-    const nChanges = Object.keys(localChanges).length;
-    const msg = `Update ${nChanges} classification${nChanges>1?'s':''} via web review tool`;
-
-    await gitDataApiPut(token, CONFIG.dataFile, content, msg);
-
-    // Commit succeeded — update local state
+    // Success
     for (const [pmid, c] of Object.entries(localChanges)) allData[pmid].classification = c;
     localChanges = {};
+    _pendingSave = false;
     updateSaveButton();
     renderTable();
-    showToast(`✓ ${nChanges} change${nChanges>1?'s':''} saved to GitHub`);
-  } catch(e) {
+    showToast(`✓ ${nChanges} change${nChanges>1?'s':''} saved`);
+  } catch (e) {
     showToast(`❌ Save failed: ${e.message}`, true);
-    const n = Object.keys(localChanges).length;
-    btn.innerHTML = `Save <span id="changeBadge" class="bg-green-700 text-white text-xs px-1.5 py-0.5 rounded-full">${n}</span>`;
   } finally {
     btn.disabled = false;
+    updateSaveButton();
   }
 }
 
-async function gitDataApiPut(token, filePath, content, message) {
-  const h = { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' };
+// ── Password management ───────────────────────────────────────────────────────
+function getPassword() { return sessionStorage.getItem('write_password'); }
 
-  // 1. Get latest commit SHA
-  const refRes = await fetch(`${API_BASE}/git/ref/heads/${CONFIG.branch}`, {headers:h});
-  if (!refRes.ok) throw new Error(`Could not get branch ref: ${refRes.status}`);
-  const {object:{sha:latestSha}} = await refRes.json();
-
-  // 2. Get tree SHA from commit
-  const commitRes = await fetch(`${API_BASE}/git/commits/${latestSha}`, {headers:h});
-  const {tree:{sha:baseTreeSha}} = await commitRes.json();
-
-  // 3. Create blob (UTF-8 encoded)
-  const bytes = new TextEncoder().encode(content);
-  const b64 = btoa(Array.from(bytes, b => String.fromCharCode(b)).join(''));
-  const blobRes = await fetch(`${API_BASE}/git/blobs`, {
-    method:'POST', headers:h, body: JSON.stringify({content:b64, encoding:'base64'})
-  });
-  if (!blobRes.ok) throw new Error(`Blob creation failed: ${blobRes.status}`);
-  const {sha:blobSha} = await blobRes.json();
-
-  // 4. Create new tree
-  const treeRes = await fetch(`${API_BASE}/git/trees`, {
-    method:'POST', headers:h,
-    body: JSON.stringify({base_tree:baseTreeSha, tree:[{path:filePath, mode:'100644', type:'blob', sha:blobSha}]})
-  });
-  if (!treeRes.ok) throw new Error(`Tree creation failed: ${treeRes.status}`);
-  const {sha:newTreeSha} = await treeRes.json();
-
-  // 5. Create commit
-  const newCommitRes = await fetch(`${API_BASE}/git/commits`, {
-    method:'POST', headers:h,
-    body: JSON.stringify({message, tree:newTreeSha, parents:[latestSha]})
-  });
-  if (!newCommitRes.ok) throw new Error(`Commit creation failed: ${newCommitRes.status}`);
-  const {sha:newCommitSha} = await newCommitRes.json();
-
-  // 6. Update branch ref
-  const updateRes = await fetch(`${API_BASE}/git/refs/heads/${CONFIG.branch}`, {
-    method:'PATCH', headers:h, body: JSON.stringify({sha:newCommitSha})
-  });
-  if (!updateRes.ok) throw new Error(`Branch update failed: ${updateRes.status}`);
+function promptPassword() {
+  document.getElementById('passwordModal').classList.remove('hidden');
+  document.getElementById('passwordModal').classList.add('flex');
+  setTimeout(() => document.getElementById('passwordInput').focus(), 50);
 }
-
-// ── Token management ──────────────────────────────────────────────────────────
-function getToken() { return sessionStorage.getItem('gh_token'); }
-function promptToken() {
-  document.getElementById('tokenModal').classList.remove('hidden');
-  document.getElementById('tokenModal').classList.add('flex');
-  setTimeout(() => document.getElementById('tokenInput').focus(), 50);
+function closePasswordModal() {
+  document.getElementById('passwordModal').classList.add('hidden');
+  document.getElementById('passwordModal').classList.remove('flex');
+  document.getElementById('passwordError').classList.add('hidden');
+  _pendingSave = false;
 }
-function closeTokenModal() {
-  document.getElementById('tokenModal').classList.add('hidden');
-  document.getElementById('tokenModal').classList.remove('flex');
-}
-function submitToken() {
-  const t = document.getElementById('tokenInput').value.trim();
-  if (!t) return;
-  sessionStorage.setItem('gh_token', t);
-  document.getElementById('tokenInput').value = '';
-  closeTokenModal();
-  if (Object.keys(allData).length === 0) loadData();
-  else showToast('✓ Token saved for this session');
+async function submitPassword() {
+  const pw = document.getElementById('passwordInput').value;
+  if (!pw) return;
+  sessionStorage.setItem('write_password', pw);
+  document.getElementById('passwordInput').value = '';
+  closePasswordModal();
+  if (_pendingSave) await _doSave(pw);
 }
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
@@ -705,11 +652,14 @@ document.getElementById('searchInput').addEventListener('input', () => {
   clearTimeout(window._st);
   window._st = setTimeout(applyFilters, 250);
 });
-document.getElementById('tokenInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') submitToken();
+document.getElementById('passwordInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitPassword();
 });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && editingPmid) closeDrawer();
+  if (e.key === 'Escape') {
+    if (editingPmid) closeDrawer();
+    else closePasswordModal();
+  }
 });
 
 loadData();
