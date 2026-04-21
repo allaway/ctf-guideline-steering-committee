@@ -34,8 +34,20 @@
   </div>
 </header>
 
+<!-- ── Tab strip ─────────────────────────────────────────────────────────── -->
+<div class="bg-[#18406A] px-6 flex gap-0 sticky top-[52px] z-10">
+  <button id="tabPapers" onclick="switchTab('papers')"
+    class="px-5 py-2 text-sm font-medium border-b-2 border-white text-white transition">
+    Papers
+  </button>
+  <button id="tabDashboard" onclick="switchTab('dashboard')"
+    class="px-5 py-2 text-sm font-medium border-b-2 border-transparent text-blue-300 hover:text-white transition">
+    Dashboard
+  </button>
+</div>
+
 <!-- ── Filter bar ────────────────────────────────────────────────────────── -->
-<div class="bg-white border-b px-6 py-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm sticky top-[52px] z-10 shadow-sm">
+<div id="filterBar" class="bg-white border-b px-6 py-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm sticky top-[84px] z-10 shadow-sm">
   <span id="statsText" class="text-gray-400 text-xs mr-1">Loading…</span>
   <div class="flex gap-3 text-xs">
     <label class="flex items-center gap-1 cursor-pointer">
@@ -113,6 +125,9 @@
       </div>
     </div>
   </div>
+  <!-- Dashboard -->
+  <div id="dashboardView" class="hidden"></div>
+
 </main>
 
 <!-- ── Edit Drawer ────────────────────────────────────────────────────────── -->
@@ -607,6 +622,7 @@ async function _doSave(password) {
     localChanges = {};
     _pendingSave = false;
     renderTable();
+    if (activeTab === 'dashboard') renderDashboard();
     showToast(`✓ ${nChanges} change${nChanges>1?'s':''} saved`);
   } catch (e) {
     showToast(`❌ Save failed: ${e.message}`, true);
@@ -652,6 +668,235 @@ function showToast(msg, err=false) {
   el.onclick = () => el.remove();
   document.body.appendChild(el);
   setTimeout(()=>el.remove(), err ? 8000 : 5000);
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────
+let activeTab = 'papers';
+function switchTab(tab) {
+  activeTab = tab;
+  const onPapers = tab === 'papers';
+  document.getElementById('filterBar').classList.toggle('hidden', !onPapers);
+  document.getElementById('tableContainer').classList.toggle('hidden', !onPapers || Object.keys(allData).length === 0);
+  document.getElementById('loadingState').classList.toggle('hidden', Object.keys(allData).length > 0);
+  document.getElementById('dashboardView').classList.toggle('hidden', onPapers);
+  document.getElementById('tabPapers').className    = `px-5 py-2 text-sm font-medium border-b-2 transition ${onPapers  ? 'border-white text-white'          : 'border-transparent text-blue-300 hover:text-white'}`;
+  document.getElementById('tabDashboard').className = `px-5 py-2 text-sm font-medium border-b-2 transition ${!onPapers ? 'border-white text-white'          : 'border-transparent text-blue-300 hover:text-white'}`;
+  if (!onPapers) renderDashboard();
+}
+
+// ── Dashboard ──────────────────────────────────────────────────────────────
+function renderDashboard() {
+  const gl = Object.entries(allData)
+    .map(([pmid, d]) => ({ pub: d.pubmed ?? {}, c: localChanges[pmid] ?? d.classification ?? {} }))
+    .filter(({c}) => c.is_guideline_or_recommendation);
+
+  const total = Object.keys(allData).length;
+  const nGl = gl.length;
+
+  function countField(field) {
+    const counts = {};
+    for (const {c} of gl) {
+      const vals = Array.isArray(c[field]) ? c[field] : (c[field] ? [c[field]] : []);
+      for (const v of vals) { counts[v] = (counts[v] || 0) + 1; }
+    }
+    return counts;
+  }
+  function countBool(key) { return gl.filter(({c}) => c[key]).length; }
+
+  const byDocType = Object.fromEntries(
+    DOCUMENT_TYPES.slice(0,-1).map(t => [t, gl.filter(({c}) => c.document_type === t).length])
+  );
+  const byCond    = countField('conditions');
+  const byStrength = countField('strength_of_evidence');
+  const byMethod  = countField('methodologies');
+  const byYear    = {};
+  for (const {pub, c} of gl) {
+    const y = pub.year || 'Unknown';
+    byYear[y] = (byYear[y] || 0) + 1;
+  }
+  const focusCounts = [
+    ['Diagnosis',              countBool('focus_diagnosis')],
+    ['Treatment',              countBool('focus_treatment')],
+    ['Surveillance / Mgmt',    countBool('focus_surveillance_management')],
+    ['Genetic Testing',        countBool('focus_genetic_testing')],
+  ];
+  const manifCounts = {};
+  for (const [cond, field] of Object.entries(MANIFFIELDS)) {
+    manifCounts[cond] = countField(field);
+  }
+
+  function bars(pairs, maxVal, colorClass, labelWidth = 'w-52') {
+    if (!pairs.length) return '<p class="text-xs text-gray-400 italic">No data</p>';
+    return pairs.map(([label, n]) => {
+      const pct = maxVal > 0 ? (n / maxVal * 100).toFixed(1) : 0;
+      return `<div class="flex items-center gap-2 mb-1.5">
+        <span class="${labelWidth} text-right text-xs text-gray-600 truncate flex-shrink-0" title="${esc(label)}">${esc(label)}</span>
+        <div class="flex-1 bg-gray-100 rounded-full h-4 relative min-w-0">
+          <div class="h-4 rounded-full ${colorClass} transition-all duration-500" style="width:${pct}%"></div>
+          <span class="absolute right-1.5 top-0 bottom-0 flex items-center text-xs font-semibold text-gray-700">${n}</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  function card(title, content) {
+    return `<div class="bg-white rounded-xl shadow-sm ring-1 ring-black ring-opacity-5 p-4">
+      <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">${title}</h3>
+      ${content}
+    </div>`;
+  }
+
+  // Doc type colors
+  const DT_COLOR = {
+    'Clinical practice guideline':       'bg-blue-500',
+    'Consensus statement':               'bg-teal-500',
+    'Evidence-based recommendation':     'bg-purple-500',
+    'Expert recommendation':             'bg-orange-400',
+    'Practice advisory':                 'bg-yellow-400',
+  };
+
+  // Document type bars (custom colors per type)
+  const dtPairs = DOCUMENT_TYPES.slice(0,-1).map(t => [t, byDocType[t] || 0]).filter(([,n]) => n > 0);
+  const dtMax = Math.max(...dtPairs.map(([,n]) => n), 1);
+  const dtBars = dtPairs.map(([label, n]) => {
+    const pct = (n / dtMax * 100).toFixed(1);
+    const color = DT_COLOR[label] || 'bg-gray-400';
+    return `<div class="flex items-center gap-2 mb-1.5">
+      <span class="w-52 text-right text-xs text-gray-600 truncate flex-shrink-0">${esc(label)}</span>
+      <div class="flex-1 bg-gray-100 rounded-full h-4 relative">
+        <div class="h-4 rounded-full ${color} transition-all duration-500" style="width:${pct}%"></div>
+        <span class="absolute right-1.5 top-0 bottom-0 flex items-center text-xs font-semibold text-gray-700">${n}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Condition bars
+  const condOrder = ['NF1','NF2-SWN','LZTR1-SWN','SMARCB1-SWN','ALL'];
+  const condColors = {'NF1':'bg-blue-500','NF2-SWN':'bg-teal-500','LZTR1-SWN':'bg-purple-500','SMARCB1-SWN':'bg-orange-400','ALL':'bg-gray-400'};
+  const condPairs = condOrder.map(c => [c, byCond[c] || 0]).filter(([,n]) => n > 0);
+  const condMax = Math.max(...condPairs.map(([,n]) => n), 1);
+  const condBars = condPairs.map(([label, n]) => {
+    const pct = (n / condMax * 100).toFixed(1);
+    return `<div class="flex items-center gap-2 mb-1.5">
+      <span class="w-28 text-right text-xs text-gray-600 flex-shrink-0">${esc(label)}</span>
+      <div class="flex-1 bg-gray-100 rounded-full h-4 relative">
+        <div class="h-4 rounded-full ${condColors[label]||'bg-gray-400'} transition-all duration-500" style="width:${pct}%"></div>
+        <span class="absolute right-1.5 top-0 bottom-0 flex items-center text-xs font-semibold text-gray-700">${n}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Focus bars
+  const focusMax = Math.max(...focusCounts.map(([,n]) => n), 1);
+  const focusBars = focusCounts.map(([label, n]) => {
+    const pct = (n / focusMax * 100).toFixed(1);
+    return `<div class="flex items-center gap-2 mb-1.5">
+      <span class="w-40 text-right text-xs text-gray-600 flex-shrink-0">${label}</span>
+      <div class="flex-1 bg-gray-100 rounded-full h-4 relative">
+        <div class="h-4 rounded-full bg-[#1F4E79] transition-all duration-500" style="width:${pct}%"></div>
+        <span class="absolute right-1.5 top-0 bottom-0 flex items-center text-xs font-semibold text-gray-700">${n}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Strength bars
+  const strPairs = STRENGTH_LEVELS.map(s => [s, (byStrength[s] || 0)]).filter(([,n]) => n > 0);
+  const strColors = {'Strong':'bg-green-600','Moderate':'bg-green-400','Weak/Conditional':'bg-yellow-400','Expert opinion only':'bg-orange-400','Not assessable':'bg-gray-400'};
+  const strMax = Math.max(...strPairs.map(([,n]) => n), 1);
+  const strBars = strPairs.map(([label, n]) => {
+    const pct = (n / strMax * 100).toFixed(1);
+    return `<div class="flex items-center gap-2 mb-1.5">
+      <span class="w-40 text-right text-xs text-gray-600 flex-shrink-0">${esc(label)}</span>
+      <div class="flex-1 bg-gray-100 rounded-full h-4 relative">
+        <div class="h-4 rounded-full ${strColors[label]||'bg-gray-400'} transition-all duration-500" style="width:${pct}%"></div>
+        <span class="absolute right-1.5 top-0 bottom-0 flex items-center text-xs font-semibold text-gray-700">${n}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Year chart (2016–present)
+  const years = [];
+  for (let y = 2016; y <= new Date().getFullYear(); y++) years.push(String(y));
+  const yearMax = Math.max(...years.map(y => byYear[y] || 0), 1);
+  const yearBars = years.map(y => {
+    const n = byYear[y] || 0;
+    const pct = (n / yearMax * 100).toFixed(1);
+    return `<div class="flex flex-col items-center gap-1 flex-1">
+      <span class="text-xs font-semibold text-gray-700">${n > 0 ? n : ''}</span>
+      <div class="w-full bg-gray-100 rounded-t" style="height:80px;display:flex;align-items:flex-end">
+        <div class="w-full rounded-t bg-[#2E6DA4] transition-all duration-500" style="height:${pct}%"></div>
+      </div>
+      <span class="text-xs text-gray-500 -rotate-45 origin-top-left mt-1">${y.slice(2)}</span>
+    </div>`;
+  }).join('');
+
+  // Methodology bars
+  const methPairs = METHODOLOGIES.map(m => [m, byMethod[m] || 0]).filter(([,n]) => n > 0)
+    .sort((a,b) => b[1] - a[1]);
+  const methMax = Math.max(...methPairs.map(([,n]) => n), 1);
+
+  // Manifestation bars per condition
+  function manifCard(condKey) {
+    const field = MANIFFIELDS[condKey];
+    const items = (TAXONOMY[condKey] || [])
+      .map(m => [m, manifCounts[condKey][m] || 0])
+      .filter(([,n]) => n > 0)
+      .sort((a,b) => b[1] - a[1]);
+    const max = Math.max(...items.map(([,n]) => n), 1);
+    const condColor = condColors[condKey] || 'bg-gray-400';
+    return card(condKey + ' Manifestations',
+      items.length ? bars(items, max, condColor, 'w-52') : '<p class="text-xs text-gray-400 italic">No manifestations recorded</p>'
+    );
+  }
+
+  document.getElementById('dashboardView').innerHTML = `
+    <!-- Stat cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+      <div class="bg-[#1F4E79] text-white rounded-xl p-4 shadow">
+        <p class="text-3xl font-bold">${nGl}</p>
+        <p class="text-blue-200 text-xs mt-1">Guidelines &amp; Recommendations</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-sm ring-1 ring-black ring-opacity-5">
+        <p class="text-3xl font-bold text-gray-800">${total}</p>
+        <p class="text-gray-400 text-xs mt-1">Total papers screened</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-sm ring-1 ring-black ring-opacity-5">
+        <p class="text-3xl font-bold text-gray-800">${(nGl/total*100).toFixed(1)}%</p>
+        <p class="text-gray-400 text-xs mt-1">Yield rate</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-sm ring-1 ring-black ring-opacity-5">
+        <p class="text-3xl font-bold text-gray-800">${dtPairs.sort((a,b)=>b[1]-a[1])[0]?.[1] ?? 0}</p>
+        <p class="text-gray-400 text-xs mt-1">${dtPairs.sort((a,b)=>b[1]-a[1])[0]?.[0] ?? '—'}</p>
+      </div>
+    </div>
+
+    <!-- Row 1: doc type + conditions + focus -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+      ${card('Document Type', dtBars)}
+      ${card('Conditions Covered', condBars)}
+      ${card('Focus Areas', focusBars)}
+    </div>
+
+    <!-- Row 2: year + strength -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+      <div class="lg:col-span-2 bg-white rounded-xl shadow-sm ring-1 ring-black ring-opacity-5 p-4">
+        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">Guidelines by Year</h3>
+        <div class="flex items-end gap-1 pt-2" style="height:110px">${yearBars}</div>
+      </div>
+      ${card('Strength of Evidence', strBars || '<p class="text-xs text-gray-400 italic">No data</p>')}
+    </div>
+
+    <!-- Row 3: manifestations 2x2 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      ${manifCard('NF1')}
+      ${manifCard('NF2-SWN')}
+      ${manifCard('LZTR1-SWN')}
+      ${manifCard('SMARCB1-SWN')}
+    </div>
+
+    <!-- Row 4: methodologies full width -->
+    ${card('Methodologies', methPairs.length ? bars(methPairs, methMax, 'bg-slate-500') : '<p class="text-xs text-gray-400 italic">No data</p>')}
+  `;
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
