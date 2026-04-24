@@ -54,7 +54,13 @@
       <input type="radio" name="glFilter" value="all" onchange="applyFilters()" checked class="accent-[#1F4E79]"> All
     </label>
     <label class="flex items-center gap-1 cursor-pointer">
-      <input type="radio" name="glFilter" value="yes" onchange="applyFilters()" class="accent-[#1F4E79]"> Guidelines
+      <input type="radio" name="glFilter" value="guideline" onchange="applyFilters()" class="accent-[#1F4E79]"> Guidelines
+    </label>
+    <label class="flex items-center gap-1 cursor-pointer">
+      <input type="radio" name="glFilter" value="recommendation" onchange="applyFilters()" class="accent-[#1F4E79]"> Recommendations
+    </label>
+    <label class="flex items-center gap-1 cursor-pointer">
+      <input type="radio" name="glFilter" value="yes" onchange="applyFilters()" class="accent-[#1F4E79]"> Guidelines &amp; Recommendations
     </label>
     <label class="flex items-center gap-1 cursor-pointer">
       <input type="radio" name="glFilter" value="no" onchange="applyFilters()" class="accent-[#1F4E79]"> Non-guidelines
@@ -246,6 +252,8 @@ function applyFilters() {
     if (q && !(pub.title||'').toLowerCase().includes(q) && !(pub.journal||'').toLowerCase().includes(q)) return false;
     if (glFilter === 'yes' && !c.is_guideline_or_recommendation) return false;
     if (glFilter === 'no'  &&  c.is_guideline_or_recommendation) return false;
+    if (glFilter === 'guideline'     && !['Clinical practice guideline','Consensus statement','Practice advisory'].includes(c.document_type)) return false;
+    if (glFilter === 'recommendation' && !['Evidence-based recommendation','Expert recommendation'].includes(c.document_type)) return false;
     if (dtFilter   && c.document_type !== dtFilter) return false;
     if (condFilter && !(c.conditions||[]).includes(condFilter)) return false;
     if (focusFilter && !c[focusFilter]) return false;
