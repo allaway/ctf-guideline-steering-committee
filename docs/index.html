@@ -349,10 +349,11 @@ function renderDrawer() {
   const dtOptions = DOCUMENT_TYPES.map(t=>
     `<option value="${esc(t)}" ${c.document_type===t?'selected':''}>${esc(t)}</option>`).join('');
 
-  const condBoxes = ['NF1','NF2-SWN','LZTR1-SWN','SMARCB1-SWN','ALL'].map(cnd=>`
+  const condBoxes = ['NF1','NF2-SWN','LZTR1-SWN','SMARCB1-SWN','ALL','NONE'].map(cnd=>`
     <label class="flex items-center gap-2 cursor-pointer text-xs">
       <input type="checkbox" id="cond-${cnd.replace(/[^a-zA-Z0-9]/g,'_')}"
-        class="w-3.5 h-3.5 accent-[#1F4E79]" ${(c.conditions||[]).includes(cnd)?'checked':''}
+        class="w-3.5 h-3.5 accent-[#1F4E79]"
+        ${cnd === 'NONE' ? ((c.conditions||[]).length === 0 ? 'checked' : '') : ((c.conditions||[]).includes(cnd) ? 'checked' : '')}
         onchange="ebCondChange('${cnd}',this.checked)">
       ${cnd}
     </label>`).join('');
@@ -517,12 +518,24 @@ function ebSet(key, val) { editBuffer[key] = val; }
 function ebCondChange(cond, checked) {
   const specific = ['NF1','NF2-SWN','LZTR1-SWN','SMARCB1-SWN'];
   if (!editBuffer.conditions) editBuffer.conditions = [];
-  if (cond === 'ALL') {
+  if (cond === 'NONE') {
+    if (checked) {
+      editBuffer.conditions = [];
+      [...specific, 'ALL'].forEach(c => {
+        const cb = document.getElementById(`cond-${c.replace(/[^a-zA-Z0-9]/g,'_')}`);
+        if (cb) cb.checked = false;
+      });
+    }
+  } else if (cond === 'ALL') {
     editBuffer.conditions = checked ? [...specific, 'ALL'] : [];
     specific.forEach(c => {
       const cb = document.getElementById(`cond-${c.replace(/[^a-zA-Z0-9]/g,'_')}`);
       if (cb) cb.checked = checked;
     });
+    if (checked) {
+      const noneCb = document.getElementById('cond-NONE');
+      if (noneCb) noneCb.checked = false;
+    }
   } else {
     if (checked) {
       if (!editBuffer.conditions.includes(cond)) editBuffer.conditions.push(cond);
@@ -531,6 +544,8 @@ function ebCondChange(cond, checked) {
         const allCb = document.getElementById('cond-ALL');
         if (allCb) allCb.checked = true;
       }
+      const noneCb = document.getElementById('cond-NONE');
+      if (noneCb) noneCb.checked = false;
     } else {
       editBuffer.conditions = editBuffer.conditions.filter(x => x !== cond && x !== 'ALL');
       const allCb = document.getElementById('cond-ALL');
