@@ -109,7 +109,8 @@
             <th class="px-3 py-2.5 text-left font-semibold w-40">Journal</th>
             <th class="px-3 py-2.5 text-left font-semibold w-44">Document Type</th>
             <th class="px-3 py-2.5 text-left font-semibold w-32">Conditions</th>
-            <th class="px-3 py-2.5 text-center font-semibold w-32">Guideline</th>
+            <th class="px-3 py-2.5 text-center font-semibold w-20">Guideline</th>
+            <th class="px-3 py-2.5 text-center font-semibold w-24">Action</th>
           </tr>
         </thead>
         <tbody id="tableBody" class="divide-y divide-gray-100 bg-white"></tbody>
@@ -286,18 +287,18 @@ function renderTable() {
       <td class="px-3 py-2 text-gray-500 text-xs leading-snug">${esc((pub.journal||'').substring(0,40))}${(pub.journal||'').length>40?'…':''}</td>
       <td class="px-3 py-2"><span class="text-xs px-2 py-0.5 rounded-full font-medium ${pill}">${esc(dtShort)}</span></td>
       <td class="px-3 py-2 text-xs text-gray-600">${esc(conds)}</td>
+      <td class="px-3 py-2 text-center">
+        <span class="text-xs font-semibold px-2 py-0.5 rounded ${isGl?'bg-green-100 text-green-800':'bg-red-50 text-red-400'}">
+          ${isGl?'Yes':'No'}
+        </span>
+      </td>
       <td class="px-3 py-2 text-center" onclick="event.stopPropagation()">
-        <div class="flex flex-col items-center gap-1">
-          <span class="text-xs font-semibold px-2 py-0.5 rounded ${isGl?'bg-green-100 text-green-800':'bg-red-50 text-red-400'}">
-            ${isGl?'Yes':'No'}
-          </span>
-          ${isGl
-            ? `<button onclick="quickExclude('${pmid}',event)"
-                class="text-xs px-2 py-0.5 rounded bg-red-100 hover:bg-red-200 text-red-700 font-medium transition">Exclude</button>`
-            : `<button onclick="event.stopPropagation();openDrawer('${pmid}')"
-                class="text-xs px-2 py-0.5 rounded bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium transition">Include</button>`
-          }
-        </div>
+        ${isGl
+          ? `<button onclick="quickExclude('${pmid}',event)"
+              class="text-xs px-2 py-0.5 rounded bg-red-100 hover:bg-red-200 text-red-700 font-medium transition">Exclude</button>`
+          : `<button onclick="event.stopPropagation();openDrawer('${pmid}')"
+              class="text-xs px-2 py-0.5 rounded bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium transition">Include</button>`
+        }
       </td>
     </tr>`;
   }).join('');
