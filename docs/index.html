@@ -521,9 +521,14 @@ function ebCondChange(cond, checked) {
   if (cond === 'NONE') {
     if (checked) {
       editBuffer.conditions = [];
+      Object.values(MANIFFIELDS).forEach(field => { editBuffer[field] = []; });
       [...specific, 'ALL'].forEach(c => {
         const cb = document.getElementById(`cond-${c.replace(/[^a-zA-Z0-9]/g,'_')}`);
         if (cb) cb.checked = false;
+      });
+      Object.keys(MANIFFIELDS).forEach(condKey => {
+        const el = document.getElementById(`manif-details-${condKey.replace(/[^a-zA-Z0-9]/g,'_')}`);
+        if (el) el.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
       });
     }
   } else if (cond === 'ALL') {
