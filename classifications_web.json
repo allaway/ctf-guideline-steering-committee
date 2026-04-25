@@ -730,13 +730,8 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF1"
-      ],
-      "nf1_manifestations": [
-        "Optic pathway glioma",
-        "Low grade glioma"
-      ],
+      "conditions": [],
+      "nf1_manifestations": [],
       "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
@@ -1899,13 +1894,8 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF1"
-      ],
-      "nf1_manifestations": [
-        "Optic pathway glioma",
-        "Low grade glioma"
-      ],
+      "conditions": [],
+      "nf1_manifestations": [],
       "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
@@ -2406,8 +2396,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Clinical practice guideline",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF2-SWN"
       ],
@@ -2443,8 +2433,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Clinical practice guideline",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF2-SWN"
       ],
@@ -2749,13 +2739,9 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF2-SWN"
-      ],
+      "conditions": [],
       "nf1_manifestations": [],
-      "nf2_swn_manifestations": [
-        "Vestibular schwannoma"
-      ],
+      "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": false,
@@ -2918,8 +2904,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Consensus statement",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -2955,8 +2941,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Expert recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -2990,8 +2976,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Consensus statement",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -4501,15 +4487,9 @@
     "classification": {
       "document_type": "Clinical practice guideline",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF2-SWN"
-      ],
+      "conditions": [],
       "nf1_manifestations": [],
-      "nf2_swn_manifestations": [
-        "Vestibular schwannoma",
-        "Hearing loss / Deafness",
-        "Facial weakness"
-      ],
+      "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": true,
@@ -4647,8 +4627,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Expert recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -7591,8 +7571,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Consensus statement",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1",
         "NF2-SWN"
@@ -7819,8 +7799,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Evidence-based recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF2-SWN"
       ],
@@ -8934,8 +8914,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Expert recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -10248,8 +10228,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Clinical practice guideline",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [],
       "nf1_manifestations": [],
       "nf2_swn_manifestations": [],
@@ -11196,8 +11176,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Expert recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1",
         "NF2-SWN",
@@ -11323,16 +11303,9 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF2-SWN",
-        "SMARCB1-SWN"
-      ],
+      "conditions": [],
       "nf1_manifestations": [],
-      "nf2_swn_manifestations": [
-        "Vestibular schwannoma",
-        "Meningioma",
-        "Peripheral schwannoma"
-      ],
+      "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": true,
@@ -11887,8 +11860,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Evidence-based recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -12141,21 +12114,10 @@
     "classification": {
       "document_type": "Clinical practice guideline",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF2-SWN",
-        "LZTR1-SWN"
-      ],
+      "conditions": [],
       "nf1_manifestations": [],
-      "nf2_swn_manifestations": [
-        "Vestibular schwannoma",
-        "Meningioma",
-        "Peripheral schwannoma",
-        "Hearing loss / Deafness",
-        "Facial weakness"
-      ],
-      "lztr1_swn_manifestations": [
-        "Intracranial schwannoma"
-      ],
+      "nf2_swn_manifestations": [],
+      "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": true,
       "focus_treatment": true,
@@ -12791,8 +12753,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Evidence-based recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -12866,13 +12828,8 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF1"
-      ],
-      "nf1_manifestations": [
-        "Optic pathway glioma",
-        "Low grade glioma"
-      ],
+      "conditions": [],
+      "nf1_manifestations": [],
       "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
@@ -12938,14 +12895,9 @@
     "classification": {
       "document_type": "Expert recommendation",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF2-SWN"
-      ],
+      "conditions": [],
       "nf1_manifestations": [],
-      "nf2_swn_manifestations": [
-        "Vestibular schwannoma",
-        "Hearing loss / Deafness"
-      ],
+      "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": false,
@@ -13045,8 +12997,8 @@
       "fulltext_source": "PMC XML"
     },
     "classification": {
-      "document_type": "Evidence-based recommendation",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF2-SWN"
       ],
@@ -13474,31 +13426,11 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF1",
-        "NF2-SWN",
-        "LZTR1-SWN",
-        "SMARCB1-SWN"
-      ],
-      "nf1_manifestations": [
-        "Optic pathway glioma",
-        "Low grade glioma",
-        "High grade glioma",
-        "MPNST / triton tumor"
-      ],
-      "nf2_swn_manifestations": [
-        "Meningioma",
-        "Peripheral schwannoma",
-        "Ependymoma"
-      ],
-      "lztr1_swn_manifestations": [
-        "Peripheral schwannoma",
-        "Intracranial schwannoma"
-      ],
-      "smarcb1_swn_manifestations": [
-        "Peripheral schwannoma",
-        "Meningioma"
-      ],
+      "conditions": [],
+      "nf1_manifestations": [],
+      "nf2_swn_manifestations": [],
+      "lztr1_swn_manifestations": [],
+      "smarcb1_swn_manifestations": [],
       "focus_diagnosis": true,
       "focus_treatment": false,
       "focus_surveillance_management": true,
@@ -14110,17 +14042,9 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF1",
-        "NF2-SWN"
-      ],
-      "nf1_manifestations": [
-        "MPNST / triton tumor",
-        "Plexiform neurofibroma"
-      ],
-      "nf2_swn_manifestations": [
-        "Peripheral schwannoma"
-      ],
+      "conditions": [],
+      "nf1_manifestations": [],
+      "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": true,
@@ -14366,14 +14290,9 @@
     "classification": {
       "document_type": "Expert recommendation",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF2-SWN"
-      ],
+      "conditions": [],
       "nf1_manifestations": [],
-      "nf2_swn_manifestations": [
-        "Vestibular schwannoma",
-        "Meningioma"
-      ],
+      "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
       "focus_diagnosis": false,
@@ -15271,8 +15190,8 @@
       "fulltext_source": "abstract_only"
     },
     "classification": {
-      "document_type": "Consensus statement",
-      "is_guideline_or_recommendation": true,
+      "document_type": "Not a guideline or recommendation",
+      "is_guideline_or_recommendation": false,
       "conditions": [
         "NF1"
       ],
@@ -18390,15 +18309,8 @@
     "classification": {
       "document_type": "Consensus statement",
       "is_guideline_or_recommendation": true,
-      "conditions": [
-        "NF1"
-      ],
-      "nf1_manifestations": [
-        "Optic pathway glioma",
-        "Low grade glioma",
-        "Vascular disease / anomaly",
-        "Cognitive"
-      ],
+      "conditions": [],
+      "nf1_manifestations": [],
       "nf2_swn_manifestations": [],
       "lztr1_swn_manifestations": [],
       "smarcb1_swn_manifestations": [],
