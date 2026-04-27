@@ -763,30 +763,30 @@ function upsetSvg(setLabels, setColors, papers, getPaperSets) {
   if (!intersections.length) return '<p class="text-xs text-gray-400 italic">No data</p>';
 
   const maxCount = Math.max(...intersections.map(x => x.count));
-  const COL_W = 44, BAR_H = 80, DOT_R = 7, ROW_H = 24, LEFT_W = 110;
+  const COL_W = 44, BAR_H = 80, DOT_R = 7, ROW_H = 24, TOP_PAD = 20;
+  const LEFT_W = Math.min(190, Math.max(90, Math.max(...setLabels.map(l => l.length)) * 7 + 14));
   const svgW = LEFT_W + intersections.length * COL_W + 8;
-  const svgH = BAR_H + 28 + setLabels.length * ROW_H + 8;
+  const svgH = TOP_PAD + BAR_H + 28 + setLabels.length * ROW_H + 8;
 
   let out = '';
 
   // Bars + counts
   intersections.forEach((inter, i) => {
     const cx = LEFT_W + i * COL_W + COL_W / 2;
-    const h  = Math.max(2, (inter.count / maxCount) * BAR_H);
-    const y  = BAR_H - h;
+    const h   = Math.max(2, (inter.count / maxCount) * BAR_H);
+    const barY = TOP_PAD + BAR_H - h;
     const col = setColors[setLabels.findIndex(s => inter.sets.includes(s))] || '#1F4E79';
-    out += `<rect x="${cx-13}" y="${y}" width="26" height="${h}" fill="${col}" rx="2"/>`;
-    out += `<text x="${cx}" y="${y-3}" text-anchor="middle" font-size="10" fill="#374151">${inter.count}</text>`;
+    out += `<rect x="${cx-13}" y="${barY}" width="26" height="${h}" fill="${col}" rx="2"/>`;
+    out += `<text x="${cx}" y="${barY-4}" text-anchor="middle" font-size="10" fill="#374151">${inter.count}</text>`;
   });
 
   // Set labels + dots
   setLabels.forEach((lbl, si) => {
-    const cy = BAR_H + 28 + si * ROW_H + ROW_H / 2;
+    const cy = TOP_PAD + BAR_H + 28 + si * ROW_H + ROW_H / 2;
     out += `<text x="${LEFT_W-8}" y="${cy+4}" text-anchor="end" font-size="11" fill="#4B5563">${esc(lbl)}</text>`;
     intersections.forEach((inter, i) => {
       const cx = LEFT_W + i * COL_W + COL_W / 2;
-      const fill = inter.sets.includes(lbl) ? setColors[si] : '#E5E7EB';
-      out += `<circle cx="${cx}" cy="${cy}" r="${DOT_R}" fill="${fill}"/>`;
+      out += `<circle cx="${cx}" cy="${cy}" r="${DOT_R}" fill="${inter.sets.includes(lbl) ? setColors[si] : '#E5E7EB'}"/>`;
     });
   });
 
@@ -795,8 +795,8 @@ function upsetSvg(setLabels, setColors, papers, getPaperSets) {
     if (inter.sets.length < 2) return;
     const cx = LEFT_W + i * COL_W + COL_W / 2;
     const rows = setLabels.map((s, si) => inter.sets.includes(s) ? si : -1).filter(x => x >= 0);
-    const y1 = BAR_H + 28 + rows[0] * ROW_H + ROW_H / 2;
-    const y2 = BAR_H + 28 + rows[rows.length-1] * ROW_H + ROW_H / 2;
+    const y1 = TOP_PAD + BAR_H + 28 + rows[0] * ROW_H + ROW_H / 2;
+    const y2 = TOP_PAD + BAR_H + 28 + rows[rows.length-1] * ROW_H + ROW_H / 2;
     out += `<line x1="${cx}" y1="${y1}" x2="${cx}" y2="${y2}" stroke="${setColors[rows[0]]}" stroke-width="3" stroke-linecap="round"/>`;
   });
 
@@ -1030,13 +1030,31 @@ function renderDashboard() {
         ['#1F4E79','#059669','#7C3AED','#D97706','#DC2626'],
         gl,
         c => [
-          c.focus_diagnosis            && 'Diagnosis',
-          c.focus_treatment            && 'Treatment',
+          c.focus_diagnosis               && 'Diagnosis',
+          c.focus_treatment               && 'Treatment',
           c.focus_surveillance_management && 'Surveillance',
-          c.focus_genetic_testing      && 'Genetic Testing',
-          c.focus_clinical_trials      && 'Clinical Trials',
+          c.focus_genetic_testing         && 'Genetic Testing',
+          c.focus_clinical_trials         && 'Clinical Trials',
         ].filter(Boolean)
       ))}
+    </div>
+
+    <!-- Row 6: manifestation co-occurrence 2x2 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      ${['NF1','NF2-SWN','LZTR1-SWN','SMARCB1-SWN'].map(condKey => {
+        const field = MANIFFIELDS[condKey];
+        const color = {'NF1':'#3B82F6','NF2-SWN':'#14B8A6','LZTR1-SWN':'#A855F7','SMARCB1-SWN':'#FB923C'}[condKey];
+        const condPapers = gl.filter(({c}) => (c.conditions||[]).includes(condKey) || (c.conditions||[]).includes('ALL'));
+        return card(
+          condKey + ' Manifestation Co-occurrence',
+          upsetSvg(
+            TAXONOMY[condKey],
+            Array(TAXONOMY[condKey].length).fill(color),
+            condPapers,
+            c => c[field] || []
+          )
+        );
+      }).join('')}
     </div>
   `;
 }
