@@ -76,23 +76,31 @@
     <option>Practice advisory</option>
     <option>Not a guideline or recommendation</option>
   </select>
-  <select id="conditionFilter" onchange="applyFilters()"
-    class="border rounded px-2 py-1 text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-400">
-    <option value="">All conditions</option>
-    <option>NF1</option>
-    <option>NF2-SWN</option>
-    <option>LZTR1-SWN</option>
-    <option>SMARCB1-SWN</option>
-  </select>
-  <select id="focusFilter" onchange="applyFilters()"
-    class="border rounded px-2 py-1 text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-400">
-    <option value="">All focus areas</option>
-    <option value="focus_diagnosis">Diagnosis</option>
-    <option value="focus_treatment">Treatment</option>
-    <option value="focus_surveillance_management">Surveillance</option>
-    <option value="focus_genetic_testing">Genetic Testing</option>
-    <option value="focus_clinical_trials">Clinical Trials</option>
-  </select>
+  <div class="relative" id="condDropdown">
+    <button type="button" onclick="toggleDropdown('cond',event)"
+      class="border rounded px-2 py-1 text-xs text-gray-700 bg-white hover:bg-gray-50 flex items-center gap-2 min-w-[140px] focus:outline-none focus:ring-1 focus:ring-blue-400">
+      <span id="condLabel">All conditions</span><span class="ml-auto text-gray-400">▾</span>
+    </button>
+    <div id="condPanel" class="hidden absolute top-full left-0 mt-1 bg-white border rounded shadow-lg z-20 py-1 min-w-[160px]">
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="NF1" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="condFilterChange()"> NF1</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="NF2-SWN" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="condFilterChange()"> NF2-SWN</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="LZTR1-SWN" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="condFilterChange()"> LZTR1-SWN</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="SMARCB1-SWN" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="condFilterChange()"> SMARCB1-SWN</label>
+    </div>
+  </div>
+  <div class="relative" id="focusDropdown">
+    <button type="button" onclick="toggleDropdown('focus',event)"
+      class="border rounded px-2 py-1 text-xs text-gray-700 bg-white hover:bg-gray-50 flex items-center gap-2 min-w-[140px] focus:outline-none focus:ring-1 focus:ring-blue-400">
+      <span id="focusLabel">All focus areas</span><span class="ml-auto text-gray-400">▾</span>
+    </button>
+    <div id="focusPanel" class="hidden absolute top-full left-0 mt-1 bg-white border rounded shadow-lg z-20 py-1 min-w-[190px]">
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="focus_diagnosis" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="focusFilterChange()"> Diagnosis</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="focus_treatment" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="focusFilterChange()"> Treatment</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="focus_surveillance_management" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="focusFilterChange()"> Surveillance</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="focus_genetic_testing" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="focusFilterChange()"> Genetic Testing</label>
+      <label class="flex items-center gap-2 px-3 py-1.5 text-xs cursor-pointer hover:bg-gray-50"><input type="checkbox" value="focus_clinical_trials" class="w-3.5 h-3.5 accent-[#1F4E79]" onchange="focusFilterChange()"> Clinical Trials</label>
+    </div>
+  </div>
 </div>
 
 <!-- ── Main ──────────────────────────────────────────────────────────────── -->
@@ -218,9 +226,11 @@ const PAGE_SIZE = 50;
 let allData = {};
 let filteredPmids = [];
 let currentPage = 1;
-let localChanges = {}; // pmid → modified classification
+let localChanges = {};
 let editingPmid = null;
-let editBuffer = {};   // live edits in the open drawer (not yet applied)
+let editBuffer = {};
+let selectedConds = [];
+let selectedFocus = [];
 
 // ── Data loading ──────────────────────────────────────────────────────────────
 async function loadData() {
@@ -244,8 +254,6 @@ function applyFilters() {
   const q = document.getElementById('searchInput')?.value.toLowerCase() || '';
   const glFilter = document.querySelector('input[name="glFilter"]:checked')?.value || 'all';
   const dtFilter = document.getElementById('docTypeFilter')?.value || '';
-  const condFilter = document.getElementById('conditionFilter')?.value || '';
-  const focusFilter = document.getElementById('focusFilter')?.value || '';
 
   filteredPmids = Object.entries(allData).filter(([pmid, d]) => {
     const c = localChanges[pmid] ?? d.classification ?? {};
@@ -255,9 +263,9 @@ function applyFilters() {
     if (glFilter === 'no'  &&  c.is_guideline_or_recommendation) return false;
     if (glFilter === 'guideline'     && !['Clinical practice guideline','Consensus statement','Practice advisory'].includes(c.document_type)) return false;
     if (glFilter === 'recommendation' && !['Evidence-based recommendation','Expert recommendation'].includes(c.document_type)) return false;
-    if (dtFilter   && c.document_type !== dtFilter) return false;
-    if (condFilter && !(c.conditions||[]).includes(condFilter)) return false;
-    if (focusFilter && !c[focusFilter]) return false;
+    if (dtFilter && c.document_type !== dtFilter) return false;
+    if (selectedConds.length > 0 && !selectedConds.some(cond => (c.conditions||[]).includes(cond))) return false;
+    if (selectedFocus.length > 0 && !selectedFocus.some(f => c[f])) return false;
     return true;
   }).sort(([,a],[,b]) => {
     const ac = localChanges[Object.keys(localChanges).find(k=>allData[k]===a)] ?? a.classification ?? {};
@@ -954,6 +962,40 @@ function renderDashboard() {
     ${card('Methodologies', methPairs.length ? bars(methPairs, methMax, 'bg-slate-500') : '<p class="text-xs text-gray-400 italic">No data</p>')}
   `;
 }
+
+// ── Multi-select dropdowns ────────────────────────────────────────────────────
+const FOCUS_LABELS = {
+  focus_diagnosis: 'Diagnosis', focus_treatment: 'Treatment',
+  focus_surveillance_management: 'Surveillance', focus_genetic_testing: 'Genetic Testing',
+  focus_clinical_trials: 'Clinical Trials',
+};
+
+function toggleDropdown(which, event) {
+  event.stopPropagation();
+  const panel = document.getElementById(which === 'cond' ? 'condPanel' : 'focusPanel');
+  const other = document.getElementById(which === 'cond' ? 'focusPanel' : 'condPanel');
+  other.classList.add('hidden');
+  panel.classList.toggle('hidden');
+}
+
+function condFilterChange() {
+  selectedConds = [...document.querySelectorAll('#condPanel input:checked')].map(el => el.value);
+  document.getElementById('condLabel').textContent =
+    selectedConds.length === 0 ? 'All conditions' : selectedConds.join(', ');
+  applyFilters();
+}
+
+function focusFilterChange() {
+  selectedFocus = [...document.querySelectorAll('#focusPanel input:checked')].map(el => el.value);
+  document.getElementById('focusLabel').textContent =
+    selectedFocus.length === 0 ? 'All focus areas' : selectedFocus.map(f => FOCUS_LABELS[f]).join(', ');
+  applyFilters();
+}
+
+document.addEventListener('click', () => {
+  document.getElementById('condPanel')?.classList.add('hidden');
+  document.getElementById('focusPanel')?.classList.add('hidden');
+});
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 document.getElementById('searchInput').addEventListener('input', () => {
