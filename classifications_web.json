@@ -221,7 +221,7 @@
   "27212418": {
     "pubmed": {
       "pmid": "27212418",
-      "title": "Café-au-lait Macules and Neurofibromatosis Type 1: A Review of the Literature.",
+      "title": "Caf\u00e9-au-lait Macules and Neurofibromatosis Type 1: A Review of the Literature.",
       "abstract": "The first sign of neurofibromatosis type 1 (NF1) in a child is often the presence of multiple caf&#xe9;-au-lait macules. Although previous studies reported that almost individuals with multiple caf&#xe9;-au-lait macules will eventually develop NF1 based on clinical criteria, recent studies and clinical observations suggest that a significant percentage of them do not have NF1. We conducted the first systematic review of the literature on the prevalence of definitive NF1 among patients referred for isolated caf&#xe9;-au-lait macules, searching more precisely for the proportion of those patients who do not have NF1. Because we now know that the presence of caf&#xe9;-au-lait macules and freckling might not distinguish between NF1 and other conditions such as Legius syndrome, definitive NF1 was defined as the presence of caf&#xe9;-au-lait macules with or without freckling plus one of the following: Lisch nodules, neurofibroma, plexiform neurofibroma, bone dysplasia, optic pathway glioma, or familial history of NF1. Six articles reported sufficient data to meet our inclusion criteria. Grouping all studies together, we found that 19.5% to 57.1% of all patients with isolated caf&#xe9;-au-lait macules did not have a diagnosis of NF1 after follow-up or genetic testing. A significant portion of the patients presenting with isolated caf&#xe9;-au-lait macules at initial consultation might not have NF1. Genetic testing could help guide the follow-up of those patients, but further evidence is required to make recommendations.",
       "year": "2016",
       "journal": "Pediatr Neurol",
@@ -253,7 +253,7 @@
       ],
       "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "",
-      "notes": "Systematic review examining the proportion of patients with isolated café-au-lait macules who do not have NF1. Highlights diagnostic challenge distinguishing NF1 from Legius syndrome and other conditions. Concludes genetic testing may guide follow-up but stops short of making formal recommendations. Not a guideline or recommendation document, but highly relevant background evidence for NF1 diagnostic criteria guidelines."
+      "notes": "Systematic review examining the proportion of patients with isolated caf\u00e9-au-lait macules who do not have NF1. Highlights diagnostic challenge distinguishing NF1 from Legius syndrome and other conditions. Concludes genetic testing may guide follow-up but stops short of making formal recommendations. Not a guideline or recommendation document, but highly relevant background evidence for NF1 diagnostic criteria guidelines."
     }
   },
   "27315446": {
@@ -448,7 +448,7 @@
   "27469520": {
     "pubmed": {
       "pmid": "27469520",
-      "title": "Multiple Café au Lait Spots in a Group of Fair-Skinned Children without Signs or Symptoms of Neurofibromatosis Type 1.",
+      "title": "Multiple Caf\u00e9 au Lait Spots in a Group of Fair-Skinned Children without Signs or Symptoms of Neurofibromatosis Type 1.",
       "abstract": "The presence of six or more caf&#xe9; au lait (CAL) spots is a criterion for the diagnosis of neurofibromatosis type 1 (NF-1). Children with multiple CAL spots are often referred to dermatologists for NF-1 screening. The objective of this case series is to characterize a subset of fair-complected children with red or blond hair and multiple feathery CAL spots who did not meet the criteria for NF-1 at the time of their last evaluation. We conducted a chart review of eight patients seen in our pediatric dermatology clinic who were previously identified as having multiple CAL spots and no other signs or symptoms of NF-1. We describe eight patients ages 2 to 9 years old with multiple, irregular CAL spots with feathery borders and no other signs or symptoms of NF-1. Most of these patients had red or blond hair and were fair complected. All patients were evaluated in our pediatric dermatology clinic, some with a geneticist. The number of CAL spots per patient ranged from 5 to 15 (mean 9.4, median 9). A subset of children, many with fair complexions and red or blond hair, has an increased number of feathery CAL spots and appears unlikely to develop NF-1, although genetic testing was not conducted. It is important to recognize the benign nature of CAL spots in these patients so that appropriate screening and follow-up recommendations may be made.",
       "year": "2016",
       "journal": "Pediatr Dermatol",
@@ -473,7 +473,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Small case series (n=8) describing fair-skinned children with multiple café au lait spots who do not meet NF1 diagnostic criteria. Relevant to NF1 differential diagnosis and CAL spot evaluation, but is descriptive/observational rather than a guideline or recommendation document. No genetic testing performed."
+      "notes": "Small case series (n=8) describing fair-skinned children with multiple caf\u00e9 au lait spots who do not meet NF1 diagnostic criteria. Relevant to NF1 differential diagnosis and CAL spot evaluation, but is descriptive/observational rather than a guideline or recommendation document. No genetic testing performed."
     }
   },
   "27527645": {
@@ -508,7 +508,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "CTF (REiNS International Collaboration)",
-      "notes": "Part of the REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) functional outcomes initiative. Focused on standardizing clinical trial endpoints (sleep and pulmonary outcomes) for airway plexiform neurofibromas in NF1 rather than direct clinical management guidelines. Defines minimum response criteria for AHI, R10, FEV1/FEV0.75 as primary endpoints."
+      "notes": "Part of the REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) functional outcomes initiative. Focused on standardizing clinical trial endpoints (sleep and pulmonary outcomes) for airway plexiform neurofibromas in NF1 rather than direct clinical management guidelines. Defines minimum response criteria for AHI, R10, FEV1/FEV0.75 as primary endpoints.",
+      "focus_clinical_trials": true
     }
   },
   "27527646": {
@@ -546,7 +547,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "REiNS International Collaboration",
-      "notes": "REiNS Neurocognitive Committee recommendations for standardized cognitive outcome measures (attention domain) in NF1 clinical trials. Recommends Digit Span (Wechsler) and Conners scales. Part of a series; not a full clinical practice guideline but a formal expert-driven recommendation for trial methodology."
+      "notes": "REiNS Neurocognitive Committee recommendations for standardized cognitive outcome measures (attention domain) in NF1 clinical trials. Recommends Digit Span (Wechsler) and Conners scales. Part of a series; not a full clinical practice guideline but a formal expert-driven recommendation for trial methodology.",
+      "focus_clinical_trials": true
     }
   },
   "27527647": {
@@ -647,7 +649,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "CTF",
-      "notes": "REiNS International Collaboration consensus recommendation on patient-reported outcome (PRO) measures for pain and physical functioning in NF clinical trials. Recommends NRS-11, Pain Interference Index, PROMIS Pain Interference, and PROMIS Physical Functioning scales. Final pain interference recommendation deferred pending additional research. Covers all NF types (NF1, NF2, schwannomatosis) broadly."
+      "notes": "REiNS International Collaboration consensus recommendation on patient-reported outcome (PRO) measures for pain and physical functioning in NF clinical trials. Recommends NRS-11, Pain Interference Index, PROMIS Pain Interference, and PROMIS Physical Functioning scales. Final pain interference recommendation deferred pending additional research. Covers all NF types (NF1, NF2, schwannomatosis) broadly.",
+      "focus_clinical_trials": true
     }
   },
   "27527649": {
@@ -682,13 +685,14 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "CTF",
-      "notes": "Biomarker working group consensus recommendations covering NF1, NF2, and schwannomatosis; focuses on biospecimen collection, biobanking SOPs, and minimal clinical datasets rather than clinical treatment or diagnosis. Schwannomatosis is addressed broadly without LZTR1/SMARCB1 subtype distinction."
+      "notes": "Biomarker working group consensus recommendations covering NF1, NF2, and schwannomatosis; focuses on biospecimen collection, biobanking SOPs, and minimal clinical datasets rather than clinical treatment or diagnosis. Schwannomatosis is addressed broadly without LZTR1/SMARCB1 subtype distinction.",
+      "focus_clinical_trials": true
     }
   },
   "27666661": {
     "pubmed": {
       "pmid": "27666661",
-      "title": "Molecular screening strategies for NF1-like syndromes with café-au-lait macules (Review).",
+      "title": "Molecular screening strategies for NF1-like syndromes with caf\u00e9-au-lait macules (Review).",
       "abstract": "Multiple caf&#xe9;-au-lait macules (CALM) are usually associated with neurofibromatosis type&#xa0;1 (NF1), one of the most common hereditary disorders. However, a group of genetic disorders presenting with CALM have mutations that are involved in human skin pigmentation regulation signaling pathways, including KIT ligand/KIT proto&#x2011;oncogene receptor tyrosine kinase and Ras/mitogen&#x2011;activated protein kinase. These disorders, which include Legius syndrome, Noonan syndrome with multiple lentigines or LEOPARD syndrome, and familial progressive hyperpigmentation) are difficult to distinguish from NF1 at early stages, using skin appearance alone. Furthermore, certain syndromes are clinically overlapping and molecular testing is a vital diagnostic method. The present review aims to provide an overview of these 'NF1&#x2011;like' inherited diseases and recommend a cost&#x2011;effective strategy for making a clear diagnosis among these diseases with an ambiguous borderline.",
       "year": "2016",
       "journal": "Mol Med Rep",
@@ -713,7 +717,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a narrative review proposing a molecular screening strategy for NF1-like syndromes presenting with café-au-lait macules (RASopathies, KITLG/KIT pathway disorders). Although it suggests a screening algorithm, it is not a formal clinical practice guideline or consensus statement — it represents one group's expert opinion embedded in a review article. NF2/schwannomatosis mentioned only briefly in passing. No formal evidence grading or guideline methodology applied."
+      "notes": "This is a narrative review proposing a molecular screening strategy for NF1-like syndromes presenting with caf\u00e9-au-lait macules (RASopathies, KITLG/KIT pathway disorders). Although it suggests a screening algorithm, it is not a formal clinical practice guideline or consensus statement \u2014 it represents one group's expert opinion embedded in a review article. NF2/schwannomatosis mentioned only briefly in passing. No formal evidence grading or guideline methodology applied."
     }
   },
   "27683733": {
@@ -838,7 +842,7 @@
       "focus_genetic_testing": false,
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "Centre hospitalier de l'Université de Montréal",
+      "affiliated_org": "Centre hospitalier de l'Universit\u00e9 de Montr\u00e9al",
       "notes": "Retrospective single-centre cohort study (n=145 pheochromocytoma patients, 9 with NF1) examining clinical characteristics and mode of presentation of PHEO in NF1. Not a guideline or recommendation, but has direct relevance to NF1 surveillance guidelines regarding whether routine hormonal screening for pheochromocytoma should be recommended. Concludes that older age at PHEO diagnosis in NF1 may reflect lack of systematic screening."
     }
   },
@@ -915,7 +919,7 @@
   "27838393": {
     "pubmed": {
       "pmid": "27838393",
-      "title": "Mutation spectrum of NF1 gene in Italian patients with neurofibromatosis type 1 using Ion Torrent PGM™ platform.",
+      "title": "Mutation spectrum of NF1 gene in Italian patients with neurofibromatosis type 1 using Ion Torrent PGM\u2122 platform.",
       "abstract": "Neurofibromatosis type 1 (NF1) is caused by mutations of the NF1 gene and is one of the most common human autosomal dominant disorders. The patient shows different signs on the skin and other organs from early childhood. The best known are six or more caf&#xe9; au lait spots, axillary or inguinal freckling, increased risk of developing benign nerve sheath tumours and plexiform neurofibromas. Mutation detection is complex, due to the large gene size, the large variety of mutations and the presence of pseudogenes. Using Ion Torrent PGM&#x2122; Platform, 73 mutations were identified in 79 NF1 Italian patients, 51% of which turned out to be novel mutations. Pathogenic status of each variant was classified using \"American College of Medical Genetics and Genomics\" guidelines criteria, thus enabling the classification of 96% of the variants identified as being pathogenic. The use of Next Generation Sequencing has proven to be effective as for costs, and time for analysis, and it allowed us to identify a patient with NF1 mosaicism. Furthermore, we designed a new approach aimed to quantify the mosaicism percentage using electropherogram of capillary electrophoresis performed on Sanger method.",
       "year": "2017",
       "journal": "Eur J Med Genet",
@@ -1226,7 +1230,7 @@
   "28346917": {
     "pubmed": {
       "pmid": "28346917",
-      "title": "Endocrine Long-Term Follow-Up of Children with Neurofibromatosis Type 1 and Optic Pathway Glioma .",
+      "title": "Endocrine Long-Term Follow-Up of Children with Neurofibromatosis Type 1 and Optic Pathway Glioma\u2029.",
       "abstract": "Children with optic pathway glioma (OPG) face sequelae related to tumour location and treatment modalities. We aimed to assess the prevalence of hypothalamic-pituitary dysfunctions in children with neurofibromatosis type 1 (NF1) and OPG who did not receive radiotherapy or surgical resection. The causative role of tumour location on endocrinopathy development is investigated. A retrospective follow-up study of 40 children with NF1 and OPG evaluated between August 1996 and May 2015 was undertaken. Patients who underwent radiotherapy or surgical resection were excluded and 36 patients were studied. Tumour location was classified according to the Dodge criteria: stage I, optic nerve alone; stage II, optic chiasm with or without optic nerve involvement; and stage III, involvement of the hypothalamus or other adjacent structures. Endocrinopathies were diagnosed in 20/36 (55.6%) children during a mean follow-up of 9.1 (0.2-13.6) years: 0/4 OPGs were Dodge stage I, 12/21 (57.1%) stage II, and 8/11 (72.7%) stage III. The first endocrinopathy was found at a mean age of 7.4 (5.0-13.2) years, 2.4 (0-6.7) years after tumour diagnosis. We found growth hormone deficiency (GHD; 36.1%), central precocious puberty (33.3%), obesity with insulin resistance/impaired glucose tolerance (11.1%), early puberty (5.5%), GH excess (5.5%), ACTH deficiency (5.5%), hypogonadotropic hypogonadism (2.7%), and thyrotropin deficiency (2.7%). GHD was transient in all of those who were retested. This population is at high risk of endocrinopathies due to tumour location. Lifelong endocrine follow-up is recommended.&#x2029;.",
       "year": "2017",
       "journal": "Horm Res Paediatr",
@@ -1451,7 +1455,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Case report of a healthy child with CMMRD (homozygous PMS2 mutation) presenting with NF1-like phenotype (café-au-lait macules, freckling) without NF1 or SPRED1 mutations. Discusses differential diagnosis of NF1 vs. CMMRD and advocates for earlier CMMRD testing in suspected sporadic NF1 without causative mutations, but does not constitute a formal guideline or recommendation."
+      "notes": "Case report of a healthy child with CMMRD (homozygous PMS2 mutation) presenting with NF1-like phenotype (caf\u00e9-au-lait macules, freckling) without NF1 or SPRED1 mutations. Discusses differential diagnosis of NF1 vs. CMMRD and advocates for earlier CMMRD testing in suspected sporadic NF1 without causative mutations, but does not constitute a formal guideline or recommendation."
     }
   },
   "28552839": {
@@ -1481,7 +1485,7 @@
       "focus_genetic_testing": false,
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "Bezmialem Vakıf University / Kanuni Sultan Süleyman Training and Research Hospital",
+      "affiliated_org": "Bezmialem Vak\u0131f University / Kanuni Sultan S\u00fcleyman Training and Research Hospital",
       "notes": "This is a primary case-control observational study (n=78 NF1 patients vs 50 healthy controls) investigating the prevalence of autoimmune thyroiditis and thyroid dysfunction in NF1. The study concludes that routine screening for autoimmune thyroid disease is unnecessary in NF1, but this is a single-centre research finding, not a formal guideline or recommendation document. It does not meet criteria for classification as a guideline, consensus statement, or evidence-based recommendation."
     }
   },
@@ -2105,7 +2109,7 @@
       ],
       "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "",
-      "notes": "Systematic review of cognitive and behavioral disorders in children with NF1 (2012–2016 literature). Covers ADHD, ASD, executive function, language, reading, visuospatial skills, motor function, and treatment (methylphenidate, statins). Not a guideline or recommendation document, but provides synthesized evidence relevant to NF1 cognitive/behavioral management guidelines."
+      "notes": "Systematic review of cognitive and behavioral disorders in children with NF1 (2012\u20132016 literature). Covers ADHD, ASD, executive function, language, reading, visuospatial skills, motor function, and treatment (methylphenidate, statins). Not a guideline or recommendation document, but provides synthesized evidence relevant to NF1 cognitive/behavioral management guidelines."
     }
   },
   "29181333": {
@@ -2170,7 +2174,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Case report with literature review advocating for routine pheochromocytoma/paraganglioma screening in NF1 patients, including asymptomatic individuals. Discusses the lack of current consensus guidelines and references emerging evidence supporting routine biochemical screening (e.g., every 3 years from age 10–14). Not itself a guideline or formal recommendation document."
+      "notes": "Case report with literature review advocating for routine pheochromocytoma/paraganglioma screening in NF1 patients, including asymptomatic individuals. Discusses the lack of current consensus guidelines and references emerging evidence supporting routine biochemical screening (e.g., every 3 years from age 10\u201314). Not itself a guideline or formal recommendation document."
     }
   },
   "29241265": {
@@ -3275,7 +3279,7 @@
   "30336779": {
     "pubmed": {
       "pmid": "30336779",
-      "title": "Painful tumors in a patient with neurofibromatosis type 1: a case report.",
+      "title": "Painful tumors in a patient with neurofibromatosis type 1: a\u00a0case report.",
       "abstract": "Herein, we report an unusual case of multifocal glomus tumors in the same hand in a patient suffering from neurofibromatosis type 1. The patient was a 37-year-old Moroccan woman, suffering from neurofibromatosis type 1, with intense pain in the fingers, successfully treated with the excision of the tumors. Histology of the lesions confirmed the diagnosis of glomus tumor. We present this case to support the association between glomus tumors and neurofibromatosis type 1. Thus, we strongly recommend that one should suspect a glomus tumor in patients with neurofibromatosis type 1 if such patients have symptoms from finger pulp or nails.",
       "year": "2018",
       "journal": "J Med Case Rep",
@@ -3306,7 +3310,7 @@
   "30348350": {
     "pubmed": {
       "pmid": "30348350",
-      "title": "Management of Cervical Instability as a Complication of Neurofibromatosis Type 1 in Children: A Historical Perspective With a 40-Year Experience.",
+      "title": "Management of Cervical Instability as a Complication of Neurofibromatosis Type 1 in Children: A Historical Perspective With\u00a0a\u00a040-Year Experience.",
       "abstract": "Literature review with supplementary case examples. The objective of this article was to review neurofibromatosis type 1 (NF1) and the associated spinal pathology with a focus on the disorder's manifestations in the immature cervical spine. NF1 is one of the most common inheritable genetic disorders. The disorder is associated with spinal deformities, long bone dysplasia, and osteoporosis. The manifestations of NF1 in the cervical spine commonly include instability secondary to kyphosis, neurofibromas, and dural ectasia. Literature relevant to the evaluation and management of NF1 in the cervical spine was reviewed using the PubMed/NCBI database with a focus on recent clinical studies. The review was supplemented with a historical perspective and patient cases. The prevalence of NF1 cervical spine lesions is difficult to define because many patients may be asymptomatic. Symptoms of cervical kyphosis can include pain or nerve deficits but some have a surprisingly high tolerance for deformity and may have frank dislocation of one vertebral body over another (spondyloptosis) with few associated symptoms. Cervical radiographs should be obtained in patients requiring traction, surgery, or intubation, and those with neck pain or symptoms that suggest spinal neurofibromas. Patients with progressive symptoms should be offered surgery. Careful planning is required because many patients will have small, dysplastic vertebral bodies, thin posterior elements, plexiform neurofibromas, or dural ectasia. The decision to use preoperative traction will vary from patient to patient. Combined anterior-posterior fusion is recommended for most cases of severe symptomatic kyphosis, and the fusion should extend from parallel to parallel vertebrae (or six or more levels). Anterior or posterior fusion alone may be an alternative for skeletally mature patients with smaller, flexible curves. Spinal deformity is the most common musculoskeletal manifestation of NF1. Cervical lesions are frequently asymptomatic, but patients with thoracolumbar scoliosis, dystrophic features, or a history of laminectomy should have the cervical spine carefully evaluated. For severe and progressive kyphotic deformities, most authors recommend a period of traction followed by a combined anterior-posterior fusion that is instrumented from parallel to parallel vertebra (or six or more levels). Close follow-up is very important because complications and progression are frequent.",
       "year": "2018",
       "journal": "Spine Deform",
@@ -3606,7 +3610,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Title 'Spots and bends' likely refers to NF1 features (café-au-lait spots and scoliosis/bony dysplasia), but no abstract is available and the title alone is insufficient to classify content type or relevance. Cannot determine if this is a guideline, case report, review, or other document type without further information."
+      "notes": "Title 'Spots and bends' likely refers to NF1 features (caf\u00e9-au-lait spots and scoliosis/bony dysplasia), but no abstract is available and the title alone is insufficient to classify content type or relevance. Cannot determine if this is a guideline, case report, review, or other document type without further information."
     }
   },
   "30688231": {
@@ -4644,8 +4648,8 @@
       "focus_genetic_testing": false,
       "methodologies": [],
       "strength_of_evidence": "Weak/Conditional",
-      "affiliated_org": "Royal Victoria Infirmary – Newcastle Hospitals NHS Foundation Trust; Manchester Centre of Genomic Medicine",
-      "notes": "Retrospective single/dual-centre cohort study (n=27) with an explicit screening recommendation: routine biochemical screening (plasma free or urinary fractionated metanephrines) for PHEO/PG in all NF1 patients starting age 10–14 years, repeated every 3 years. Classified as 'expert recommendation' because the recommendation is author-derived from low-quality retrospective evidence rather than a formal guideline development process. PHEO/PG is not listed in the nf1_manifestations controlled vocabulary; vascular disease/anomaly is the closest available term. Borderline between 'Not a guideline' and 'Expert recommendation' — the explicit, structured recommendation with rationale justifies inclusion."
+      "affiliated_org": "Royal Victoria Infirmary \u2013 Newcastle Hospitals NHS Foundation Trust; Manchester Centre of Genomic Medicine",
+      "notes": "Retrospective single/dual-centre cohort study (n=27) with an explicit screening recommendation: routine biochemical screening (plasma free or urinary fractionated metanephrines) for PHEO/PG in all NF1 patients starting age 10\u201314 years, repeated every 3 years. Classified as 'expert recommendation' because the recommendation is author-derived from low-quality retrospective evidence rather than a formal guideline development process. PHEO/PG is not listed in the nf1_manifestations controlled vocabulary; vascular disease/anomaly is the closest available term. Borderline between 'Not a guideline' and 'Expert recommendation' \u2014 the explicit, structured recommendation with rationale justifies inclusion."
     }
   },
   "31739524": {
@@ -4812,7 +4816,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "CTF, NTAP, NIH/NINDS, CDMRP",
-      "notes": "This is a commentary/funding analysis article describing collaborative funding efforts by CTF, NTAP, NIH, and CDMRP to advance NF1 drug development (specifically MEK inhibitors). It does not constitute a clinical guideline, consensus statement, or recommendation document. It provides retrospective analysis of grant funding landscape from 2006–2017 and discusses collaboration models for rare disease research."
+      "notes": "This is a commentary/funding analysis article describing collaborative funding efforts by CTF, NTAP, NIH, and CDMRP to advance NF1 drug development (specifically MEK inhibitors). It does not constitute a clinical guideline, consensus statement, or recommendation document. It provides retrospective analysis of grant funding landscape from 2006\u20132017 and discusses collaboration models for rare disease research."
     }
   },
   "31797581": {
@@ -4925,7 +4929,7 @@
   "31926907": {
     "pubmed": {
       "pmid": "31926907",
-      "title": "Clinicopathological Presentation and Management of Penile Schwannoma.",
+      "title": "Clinicopathological Presentation and Management of Penile\u00a0Schwannoma.",
       "abstract": "Patients with penile schwannoma are rare and usually with variant presentations. No evidence-based clinical guideline exists for diagnosis or treatment. To put schwannoma into differential diagnoses of benign soft tissue lesions in the penis is important. To analyze and categorize clinical, histopathological, and radiological presentations and apply possible explanation on several fields of penile schwannoma. We collected the English literature through the PubMed database of the National Library of Medicine up to October 2019. A newly diagnosed case in Chang Gung Memorial Hospital, Taiwan, was also included. This study categorized lesion locations into the penile body or shaft, glans, or penile root, dorsal or ventral. The main outcome measure was to demonstrate clinical, pathological, ultrasonography, and MRI manifestations of penile schwannoma and perform immunohistochemistry staining that has not been performed among penile schwannomas. We collected 40 cases. Data were arranged in tables. Clear descriptions were added on several fields of penile schwannoma in detail in Discussion. Penile schwannomas are mostly located at the penile shaft and dorsum of the penis. Dyspareunia is the most reported complaint for sexual dysfunction. This study is the first study in the world to document the expressions of calretinin, SOX10, glial fibrillary acid protein, D2-40 (podoplanin), and cytokeratin AE1/AE3 in penile schwannoma and claims magnetic resonance imaging and pathologic presentations of penile schwannomas are synonymous with schwannomas from head to toe. The current patient may be the first to present with penile schwannoma with schwannomatosis. Huang LC, Wang HZ, Chu YC, et&#xa0;al. Clinicopathological Presentation and Management of Penile Schwannoma. Sex Med Rev 2020;8:615-621.",
       "year": "2020",
       "journal": "Sex Med Rev",
@@ -4981,7 +4985,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Single case report of isolated colonic neurofibroma in a Lynch syndrome patient without NF1 stigmata. Authors offer informal management suggestions (biopsy first, reserve resection for symptomatic cases, surveil for NF1) but these are not formal guidelines or recommendations. NF1 relevance is peripheral — the neurofibroma occurred in isolation without NF1 diagnosis."
+      "notes": "Single case report of isolated colonic neurofibroma in a Lynch syndrome patient without NF1 stigmata. Authors offer informal management suggestions (biopsy first, reserve resection for symptomatic cases, surveil for NF1) but these are not formal guidelines or recommendations. NF1 relevance is peripheral \u2014 the neurofibroma occurred in isolation without NF1 diagnosis."
     }
   },
   "32014052": {
@@ -5025,8 +5029,8 @@
         "Consensus conference / expert panel"
       ],
       "strength_of_evidence": "Moderate",
-      "affiliated_org": "NF-France Network (réseau NF-France) / Haute Autorité de Santé (HAS)",
-      "notes": "French national PNDS (Protocole National de Diagnostic et de Soins) for NF1, published December 2016 with emerging evidence updated to November 2018. Based on extensive literature review (1966–2013 primary, with 2013–2018 supplement) plus multidisciplinary expert consensus. Graded per HAS Evidence-based Medicine criteria. Covers full spectrum of NF1 manifestations including dermatological, ophthalmological, orthopedic, neurological, and oncological domains. International dissemination purpose stated explicitly."
+      "affiliated_org": "NF-France Network (r\u00e9seau NF-France) / Haute Autorit\u00e9 de Sant\u00e9 (HAS)",
+      "notes": "French national PNDS (Protocole National de Diagnostic et de Soins) for NF1, published December 2016 with emerging evidence updated to November 2018. Based on extensive literature review (1966\u20132013 primary, with 2013\u20132018 supplement) plus multidisciplinary expert consensus. Graded per HAS Evidence-based Medicine criteria. Covers full spectrum of NF1 manifestations including dermatological, ophthalmological, orthopedic, neurological, and oncological domains. International dissemination purpose stated explicitly."
     }
   },
   "32055852": {
@@ -5476,7 +5480,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Single case report of a 9-year-old NF1 patient with partial empty sella, GH deficiency, and transient central adrenal insufficiency. Describes diagnosis and treatment with recombinant GH and hydrocortisone. The final sentence recommends lifelong endocrine follow-up for NF1 patients, but this is an incidental remark within a case report, not a formal guideline or recommendation document. NF1 manifestations described (short stature, macrocephaly, café-au-lait spots, proptosis, T2-hyperintensities) do not map to the listed NF1 manifestation categories."
+      "notes": "Single case report of a 9-year-old NF1 patient with partial empty sella, GH deficiency, and transient central adrenal insufficiency. Describes diagnosis and treatment with recombinant GH and hydrocortisone. The final sentence recommends lifelong endocrine follow-up for NF1 patients, but this is an incidental remark within a case report, not a formal guideline or recommendation document. NF1 manifestations described (short stature, macrocephaly, caf\u00e9-au-lait spots, proptosis, T2-hyperintensities) do not map to the listed NF1 manifestation categories."
     }
   },
   "32537663": {
@@ -5514,7 +5518,7 @@
       "focus_genetic_testing": true,
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "University Hospital Tübingen (Centre for Neurofibromatosis)",
+      "affiliated_org": "University Hospital T\u00fcbingen (Centre for Neurofibromatosis)",
       "notes": "Retrospective monocentric cohort study (n=70 pediatric NF2 patients) describing presenting symptoms in children with NF2. Not a guideline or recommendation document, though it contains some clinical recommendations within the discussion (e.g., referral to specialized centers, early monitoring). Provides useful epidemiological and clinical data relevant to guideline development for pediatric NF2 diagnosis."
     }
   },
@@ -6553,7 +6557,7 @@
       "focus_genetic_testing": false,
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "Pitié-Salpêtrière Hospital (National Reference Center for NF2, France)",
+      "affiliated_org": "Piti\u00e9-Salp\u00eatri\u00e8re Hospital (National Reference Center for NF2, France)",
       "notes": "Retrospective single-institution cohort study (level 4 evidence) describing multimodal management of Koos IV vestibular schwannomas in NF2 patients. Proposes a decision-making tree but this is derived from case series data and local practice, not a formal guideline or consensus process. Not a guideline or recommendation document."
     }
   },
@@ -6639,7 +6643,7 @@
   "33372952": {
     "pubmed": {
       "pmid": "33372952",
-      "title": "Germline Cancer Predisposition Variants in Pediatric Rhabdomyosarcoma: A Report From the Children's Oncology Group.",
+      "title": "Germline Cancer Predisposition Variants in\u2002Pediatric Rhabdomyosarcoma: A Report From the Children's Oncology Group.",
       "abstract": "Several cancer-susceptibility syndromes are reported to underlie pediatric rhabdomyosarcoma (RMS); however, to our knowledge there have been no systematic efforts to characterize the heterogeneous genetic etiologies of this often-fatal malignancy. We performed exome-sequencing on germline DNA from 615 patients with newly diagnosed RMS consented through the Children's Oncology Group. We compared the prevalence of cancer predisposition variants in 63 autosomal-dominant cancer predisposition genes in these patients with population controls (n&#x2009;=&#x2009;9963). All statistical tests were 2-sided. We identified germline cancer predisposition variants in 45 RMS patients (7.3%; all FOXO1 fusion negative) across 15 autosomal dominant genes, which was statistically significantly enriched compared with controls (1.4%, P&#x2009;=&#x2009;1.3&#x2009;&#xd7;&#x2009;10-22). Specifically, 73.3% of the predisposition variants were found in predisposition syndrome genes previously associated with pediatric RMS risk, such as Li-Fraumeni syndrome (TP53) and neurofibromatosis type I (NF1). Notably, 5 patients had well-described oncogenic missense variants in HRAS (p.G12V and p.G12S) associated with Costello syndrome. Also, genetic etiology differed with histology, as germline variants were more frequent in embryonal vs alveolar RMS patients (10.0% vs 3.0%, P&#x2009;=&#x2009;.02). Although patients with a cancer predisposition variant tended to be younger at diagnosis (P&#x2009;=&#x2009;9.9&#x2009;&#xd7;&#x2009;10-4), 40.0% of germline variants were identified in those older than 3&#x2009;years of age, which is in contrast to current genetic testing recommendations based on early age at diagnosis. These findings demonstrate that genetic risk of RMS results from germline predisposition variants associated with a wide spectrum of cancer susceptibility syndromes. Germline genetic testing for children with RMS should be informed by RMS subtypes and not be limited to only young patients.",
       "year": "2021",
       "journal": "J Natl Cancer Inst",
@@ -6906,7 +6910,7 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "IRRD consortium; C4CMMRD (European Consortium Care for CMMRD)",
-      "notes": "Focuses on CMMRD, not NF1/NF2/schwannomatosis directly. Relevant to NF guideline committees because CMMRD presents with NF1-like features (café-au-lait macules, neurofibromas) and must be differentiated from NF1 in the diagnostic workup. No NF conditions are the primary subject. The paper establishes seven diagnostic criteria (4 definitive, 3 likely) for CMMRD and recommends surveillance protocols."
+      "notes": "Focuses on CMMRD, not NF1/NF2/schwannomatosis directly. Relevant to NF guideline committees because CMMRD presents with NF1-like features (caf\u00e9-au-lait macules, neurofibromas) and must be differentiated from NF1 in the diagnostic workup. No NF conditions are the primary subject. The paper establishes seven diagnostic criteria (4 definitive, 3 likely) for CMMRD and recommends surveillance protocols."
     }
   },
   "33625502": {
@@ -7203,7 +7207,7 @@
       ],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "Aarhus University Hospital (Centre for Rare Diseases, Denmark)",
-      "notes": "This is a single-center retrospective cohort study combined with a literature review on mosaic NF1 (MNF1). While the authors argue that MNF1 patients should follow standard NF1 guidelines and call for development of specific MNF1 guidelines, the paper itself does not constitute a guideline or formal recommendation — it is an observational study advocating for guideline development. May be useful as supporting evidence for NF1 surveillance and diagnostic criteria sections pertaining to mosaic NF1."
+      "notes": "This is a single-center retrospective cohort study combined with a literature review on mosaic NF1 (MNF1). While the authors argue that MNF1 patients should follow standard NF1 guidelines and call for development of specific MNF1 guidelines, the paper itself does not constitute a guideline or formal recommendation \u2014 it is an observational study advocating for guideline development. May be useful as supporting evidence for NF1 surveillance and diagnostic criteria sections pertaining to mosaic NF1."
     }
   },
   "33865657": {
@@ -7593,7 +7597,7 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "",
-      "notes": "Primary study validating handheld dynamometry (HHD) as an outcome measure for clinical trials, with reliability data from 33 NF1/NF2 patients. Concludes with consensus recommendations for HHD use in NF clinical trials. Borderline classification — it is primarily a reliability/validation study but explicitly provides consensus recommendations for trial methodology."
+      "notes": "Primary study validating handheld dynamometry (HHD) as an outcome measure for clinical trials, with reliability data from 33 NF1/NF2 patients. Concludes with consensus recommendations for HHD use in NF clinical trials. Borderline classification \u2014 it is primarily a reliability/validation study but explicitly provides consensus recommendations for trial methodology."
     }
   },
   "34230197": {
@@ -7628,7 +7632,8 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "",
-      "notes": "This is a clinical measurement validation study assessing reliability and variability of digital calipers, 3D photography, and HFUS for measuring cutaneous neurofibromas. While it proposes thresholds for clinical trial use (MDD tables), it is fundamentally a primary research/validation study rather than a guideline or formal recommendation document. The proposed thresholds are investigator guidance derived from study data, not consensus- or expert panel-generated recommendations."
+      "notes": "This is a clinical measurement validation study assessing reliability and variability of digital calipers, 3D photography, and HFUS for measuring cutaneous neurofibromas. While it proposes thresholds for clinical trial use (MDD tables), it is fundamentally a primary research/validation study rather than a guideline or formal recommendation document. The proposed thresholds are investigator guidance derived from study data, not consensus- or expert panel-generated recommendations.",
+      "focus_clinical_trials": true
     }
   },
   "34230198": {
@@ -7666,7 +7671,8 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "CTF (REiNS International Collaboration)",
-      "notes": "REiNS PRO working group systematic review and recommendation of patient-reported outcome measures for QoL assessment in NF1, NF2, and schwannomatosis clinical trials. Covers children and adults. Notes absence of disease-specific QoL tools for schwannomatosis. Focused on clinical trial endpoints rather than clinical practice management."
+      "notes": "REiNS PRO working group systematic review and recommendation of patient-reported outcome measures for QoL assessment in NF1, NF2, and schwannomatosis clinical trials. Covers children and adults. Notes absence of disease-specific QoL tools for schwannomatosis. Focused on clinical trial endpoints rather than clinical practice management.",
+      "focus_clinical_trials": true
     }
   },
   "34230199": {
@@ -7702,7 +7708,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "CTF / REiNS",
-      "notes": "Produced by the REiNS cNF working group; focuses on biomarker identification and best practices for incorporating biomarkers (predictive/exploratory) into clinical trial design for cutaneous neurofibromas. Systematic literature review found no validated biomarkers; recommendations are therefore expert consensus-level. Relevant to both diagnosis (biomarker validation) and treatment (clinical trial design)."
+      "notes": "Produced by the REiNS cNF working group; focuses on biomarker identification and best practices for incorporating biomarkers (predictive/exploratory) into clinical trial design for cutaneous neurofibromas. Systematic literature review found no validated biomarkers; recommendations are therefore expert consensus-level. Relevant to both diagnosis (biomarker validation) and treatment (clinical trial design).",
+      "focus_clinical_trials": true
     }
   },
   "34230200": {
@@ -7784,7 +7791,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "CTF / REiNS",
-      "notes": "REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) International Collaboration 2020 recommendations summarizing progress and future directions on outcome measures and clinical trial endpoints for NF1 and NF2/schwannomatosis. No abstract available; classification based on title and REiNS group mandate. Not a formal evidence-graded guideline but a collaborative consensus recommendation document."
+      "notes": "REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) International Collaboration 2020 recommendations summarizing progress and future directions on outcome measures and clinical trial endpoints for NF1 and NF2/schwannomatosis. No abstract available; classification based on title and REiNS group mandate. Not a formal evidence-graded guideline but a collaborative consensus recommendation document.",
+      "focus_clinical_trials": true
     }
   },
   "34230203": {
@@ -7820,7 +7828,8 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "REiNS",
-      "notes": "REiNS Patient-Reported Outcomes Working Group recommendation for clinical trial endpoints; focuses on outcome measure selection (patient-reported hearing function and QoL) rather than direct clinical management or treatment. Systematic evaluation of published PRO measures with scoring and comparison on psychometric properties and feasibility."
+      "notes": "REiNS Patient-Reported Outcomes Working Group recommendation for clinical trial endpoints; focuses on outcome measure selection (patient-reported hearing function and QoL) rather than direct clinical management or treatment. Systematic evaluation of published PRO measures with scoring and comparison on psychometric properties and feasibility.",
+      "focus_clinical_trials": true
     }
   },
   "34230205": {
@@ -7857,7 +7866,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "CTF (REiNS Neurocognitive Committee)",
-      "notes": "REiNS International Collaboration paper recommending outcome measures (SRS-2 and SSIS-RS) for use in NF1 clinical trials targeting social skills deficits. Not a clinical practice guideline but a consensus-based recommendation for clinical trial endpoints. Includes a literature search to evaluate existing measures but does not formally appraise treatment evidence."
+      "notes": "REiNS International Collaboration paper recommending outcome measures (SRS-2 and SSIS-RS) for use in NF1 clinical trials targeting social skills deficits. Not a clinical practice guideline but a consensus-based recommendation for clinical trial endpoints. Includes a literature search to evaluate existing measures but does not formally appraise treatment evidence.",
+      "focus_clinical_trials": true
     }
   },
   "34230206": {
@@ -8010,7 +8020,7 @@
   "34309712": {
     "pubmed": {
       "pmid": "34309712",
-      "title": "[Musculoskeletal manifestations of neurofibromatosis type 1 (von Recklinghausen's disease) and tuberous sclerosis (Bourneville's disease)].",
+      "title": "[Musculoskeletal manifestations of neurofibromatosis type\u00a01 (von Recklinghausen's disease) and tuberous sclerosis (Bourneville's disease)].",
       "abstract": "Neurofibromatosis type&#xa0;1 (NF1) and tuberous sclerosis (TS) are among the most common genetic diseases. Bone and soft tissue manifestations are common disease manifestations. The standard radiological procedure is magnetic resonance imaging (MRI). All macroscopic disease manifestations can be diagnosed radiologically and observed during the course. Specific complications such as plexiform neurofibromas and malignant peripheral nerve sheath tumors (MPNST) in NF1 are readily visible on MRI. Differentiation of plexiform neurofibromas and MPNST is uncertain and requires follow-up. MRI is the most important procedure for the investigation of soft tissue and bone manifestations of NF1 and TS. KLINISCHES PROBLEM: Die Neurofibromatose Typ&#xa0;1 (NF1) und die tuber&#xf6;se Sklerose (TS) geh&#xf6;ren zu den h&#xe4;ufigsten genetischen Erkrankungen. Manifestationen an Knochen und Weichteilen sind h&#xe4;ufige Krankheitsmanifestationen. Das radiologische Standardverfahren ist die Magnetresonanztomographie (MRT). Alle makroskopischen Krankheitsmanifestationen k&#xf6;nnen radiologisch diagnostiziert und im Verlauf beobachtet werden. Spezifische Komplikationen wie plexiforme Neurofibrome und maligne periphere Nervenscheidentumoren (MPNST) bei NF1 sind in der MRT gut sichtbar. Die Differenzierung von plexiformen Neurofibromen und MPNST ist unsicher und erfordert Verlaufskontrollen. EMPFEHLUNG F&#xfc;R DIE PRAXIS: Die MRT ist das wichtigste Verfahren zur Untersuchung der Weichteil- und Knochenmanifestationen von NF1 und TS.",
       "year": "2021",
       "journal": "Radiologe",
@@ -8039,7 +8049,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a review/educational article in German discussing musculoskeletal manifestations of NF1 and tuberous sclerosis, focusing on MRI as the standard imaging modality. While it contains a brief practical recommendation section ('Empfehlung für die Praxis'), this is a narrative review rather than a formal guideline or consensus recommendation document. Tuberous sclerosis is also covered but is not an NF/schwannomatosis condition."
+      "notes": "This is a review/educational article in German discussing musculoskeletal manifestations of NF1 and tuberous sclerosis, focusing on MRI as the standard imaging modality. While it contains a brief practical recommendation section ('Empfehlung f\u00fcr die Praxis'), this is a narrative review rather than a formal guideline or consensus recommendation document. Tuberous sclerosis is also covered but is not an NF/schwannomatosis condition."
     }
   },
   "34321280": {
@@ -8193,7 +8203,7 @@
   "34471630": {
     "pubmed": {
       "pmid": "34471630",
-      "title": "Neurofibromatosis 2: Primary Modality of Hearing Rehabilitation with Cochlear Implant.",
+      "title": "Neurofibromatosis 2: Primary Modality of\u00a0Hearing Rehabilitation\u00a0with Cochlear Implant.",
       "abstract": "Auditory Brainstem Implants have been recommended as the gold standard in hearing rehabilitation of Neurofibromatosis Type 2 patients who lose hearing completely in both the ears and the cochlear nerves are not stimulable. Some patients have undergone cochlear implantation, in whom the cochlear nerve was spared during surgery or have undergone stereotactic radiotherapy preserving the function of the cochlear nerve. Here we report a case in whom we chose cochlear implantation prior to any definitive treatment for the tumour itself during the 'wait and watch' period. The reasons in favour of this approach have been discussed in this article. Post switch-on the implant is benefitting the patient satisfactorily and she is on regular follow up for monitoring the bilateral tumours.",
       "year": "2021",
       "journal": "Indian J Otolaryngol Head Neck Surg",
@@ -8490,7 +8500,7 @@
   "34814912": {
     "pubmed": {
       "pmid": "34814912",
-      "title": "Halo traction combined with posterior-only approach correction for cervical kyphosis with Neurofibromatosis-1: minimum 2 years follow-up.",
+      "title": "Halo traction combined with posterior-only approach correction for cervical kyphosis with Neurofibromatosis-1: minimum 2\u2009years follow-up.",
       "abstract": "Surgical management of cervical kyphosis in patients with NF-1 is a challenging task. Presently, anterior-only (AO), posterior-only (PO) and combined anterior-posterior (AP) spinal fusion are common surgical strategies. However, the choice of surgical strategy and application of Halo traction remain controversial. Few studies have shown and recommended posterior-only approach for cervical kyphosis correction in patients with NF-1. The aim of this study is to evaluate the safety and the effectiveness of halo Traction combined with posterior-only approach correction for treatment of cervical kyphosis with NF-1. Twenty-six patients with severe cervical kyphosis due to NF-1 were reviewed retrospectively between January 2010 and April 2018. All the cases underwent halo traction combined with posterior instrumentation and fusion surgery. Correction result, neurologic status and complications were analyzed. In this study, cervical kyphosis Cobb angle decreased from initial 61.3&#x2009;&#xb1;&#x2009;19.7 degrees to postoperative 10.6&#x2009;&#xb1;&#x2009;3.7 degrees (P&lt;0.01), with total correction rate of 82.7%, which consist of 45.8% from halo traction and 36.9% from surgical correction. JOA scores were improved from preoperative 13.3&#x2009;&#xb1;&#x2009;1.6 to postoperative 16.2&#x2009;&#xb1;&#x2009;0.7 (P&lt;0.01). Neurological status was also improved. There was no correction loss and the neurological status was stable in mean 43&#x2009;months follow-up. Three patients experienced minor complications and one patient underwent a second surgery. Halo traction combined with PO approach surgery is safe and effective method for cervical kyphosis correction in patients with NF-1. A satisfied correction result, and successful bone fusion can be achieved via this procedure, even improvement of neurological deficits can also be obtained. Our study suggested that halo traction combined with PO approach surgery is another consideration for cervical kyphosis correction in patients with NF-1.",
       "year": "2021",
       "journal": "BMC Musculoskelet Disord",
@@ -9109,7 +9119,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "Moffitt Cancer Center",
-      "notes": "This is a retrospective chart review/observational study from a single institution's high-risk genetic screening clinic. NF1 is mentioned peripherally — 50 women with NF1 were included but no breast cancers were detected in that subgroup during the study period. The paper discusses breast MRI screening timing for BRCA1/2 and other high-risk gene carriers; NF1 is a minor secondary mention. Not a guideline, consensus statement, or formal recommendation document."
+      "notes": "This is a retrospective chart review/observational study from a single institution's high-risk genetic screening clinic. NF1 is mentioned peripherally \u2014 50 women with NF1 were included but no breast cancers were detected in that subgroup during the study period. The paper discusses breast MRI screening timing for BRCA1/2 and other high-risk gene carriers; NF1 is a minor secondary mention. Not a guideline, consensus statement, or formal recommendation document."
     }
   },
   "35332608": {
@@ -9376,7 +9386,7 @@
       ],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "Oklahoma Children's Hospital",
-      "notes": "This paper is a systematic review of multidisciplinary clinic structures combined with a retrospective institutional experience report. It describes clinic organization and patient demographics rather than providing clinical recommendations or guidelines. NF1 and NF2 are among conditions seen but no specific manifestation management is the focus — the paper addresses clinic model design and care delivery."
+      "notes": "This paper is a systematic review of multidisciplinary clinic structures combined with a retrospective institutional experience report. It describes clinic organization and patient demographics rather than providing clinical recommendations or guidelines. NF1 and NF2 are among conditions seen but no specific manifestation management is the focus \u2014 the paper addresses clinic model design and care delivery."
     }
   },
   "35561805": {
@@ -10121,7 +10131,7 @@
   "36070094": {
     "pubmed": {
       "pmid": "36070094",
-      "title": "[Neurofibromatosis type 1 : From diagnosis to follow-up].",
+      "title": "[Neurofibromatosis type\u00a01 : From diagnosis to follow-up].",
       "abstract": "Neurofibromatosis type&#xa0;1 (NF1) is a&#xa0;tumor predisposition syndrome and is one of the most common genetic diseases. It is therefore a condition encountered by radiologists in clinical routine. Since the variability of the clinical expression is very high and several organ systems are affected, we present a&#xa0;standardized diagnostic approach in this article. Evaluation of the literature on neurofibromatosis type&#xa0;1 in the context of radiological examination methods. In addition to the frequently known changes in the central and peripheral nervous system such as optic gliomas and plexiform neurofibromas, lesions from the orthopedic spectrum and vascular changes must also be included in the radiological diagnosis. Due to the diversity of the clinical picture of NF1, it is reasonable to define an examination strategy which takes into account the needs of radiological routine and also reliably detects the most frequent and prognostically significant pathologies accompanying this disease. In this article, the current recommendations for diagnosis of neurofibromatosis-associated tumors and skeletal changes are summarized, and examination protocols and time intervals are suggested. HINTERGRUND: Die Neurofibromatose Typ&#xa0;1 (NF1) ist ein Tumorpr&#xe4;dispositionssyndrom und die h&#xe4;ufigste autosomal dominant vererbte Erkrankung. Daher ist sie ein im klinischen Alltag des Radiologen anzutreffendes Krankheitsbild. Da die Variabilit&#xe4;t der klinischen Auspr&#xe4;gung sehr gro&#xdf; ist und mehrere Organsysteme betroffen sind, soll in diesem Artikel eine standardisierte diagnostische Herangehensweise pr&#xe4;sentiert werden. Auswertung der Literatur zur Neurofibromatose Typ&#xa0;1 im Kontext mit den radiologischen Untersuchungsmethoden. Neben den h&#xe4;ufig bekannten Ver&#xe4;nderungen im zentralen und peripheren Nervensystem wie dem Optikusgliom und den plexiformen Neurofibromen m&#xfc;ssen auch L&#xe4;sionen aus dem orthop&#xe4;dischen Spektrum und Gef&#xe4;&#xdf;ver&#xe4;nderungen in die radiologische Ausbreitungsdiagnostik einbezogen werden. Aufgrund der Diversit&#xe4;t des Krankheitsbilds der NF1 ist es sinnvoll, eine Untersuchungsstrategie zu formulieren, die einerseits den Bed&#xfc;rfnissen der radiologischen Routine Rechnung tr&#xe4;gt und andererseits die h&#xe4;ufigsten und prognostisch bedeutsamsten Pathologien dieser Erkrankung sicher erfasst. In der vorliegenden Arbeit werden die aktuellen Empfehlungen zur Diagnostik der Neurofibromatose-assoziierten Tumoren wie auch der orthop&#xe4;disch skeletalen Ver&#xe4;nderungen zusammengefasst und Vorschl&#xe4;ge zu den Untersuchungsprotokollen sowie den Zeitintervallen unterbreitet.",
       "year": "2022",
       "journal": "Radiologie (Heidelb)",
@@ -10244,7 +10254,7 @@
       ],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "German dermatology society (AWMF S2k)",
-      "notes": "German S2k-level guideline on laser and optical radiation therapy for skin conditions. Mentions neurofibroma as one of many benign non-pigmented neoplasms treatable by laser, and café-au-lait spots (a hallmark of NF1) in the context of pigmented lesion treatment. However, the guideline is not focused on NF1 or any NF condition — these are incidental mentions within a broad dermatology laser guideline. No NF-specific conditions are the primary subject matter. Not relevant to the CTF NF guidelines."
+      "notes": "German S2k-level guideline on laser and optical radiation therapy for skin conditions. Mentions neurofibroma as one of many benign non-pigmented neoplasms treatable by laser, and caf\u00e9-au-lait spots (a hallmark of NF1) in the context of pigmented lesion treatment. However, the guideline is not focused on NF1 or any NF condition \u2014 these are incidental mentions within a broad dermatology laser guideline. No NF-specific conditions are the primary subject matter. Not relevant to the CTF NF guidelines."
     }
   },
   "36120213": {
@@ -11222,7 +11232,7 @@
       ],
       "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "EURACAN",
-      "notes": "Multidisciplinary EURACAN task force covering full spectrum of peripheral and cranial nerve sheath tumors (schwannoma, neurofibroma, PN, ANNUBP, MPNST, MMNST, perineurioma, HNST, cauda equina neuroendocrine tumor). Evidence classified per EFNS guidelines (Classes I–IV, Levels A–C); authors explicitly note very low evidence due to rarity of these tumors. Recommendations cover diagnosis (pathology, molecular, imaging), surgery, radiotherapy, and systemic therapy including selumetinib for NF1 plexiform neurofibromas. Literature reviewed through September 2022."
+      "notes": "Multidisciplinary EURACAN task force covering full spectrum of peripheral and cranial nerve sheath tumors (schwannoma, neurofibroma, PN, ANNUBP, MPNST, MMNST, perineurioma, HNST, cauda equina neuroendocrine tumor). Evidence classified per EFNS guidelines (Classes I\u2013IV, Levels A\u2013C); authors explicitly note very low evidence due to rarity of these tumors. Recommendations cover diagnosis (pathology, molecular, imaging), surgery, radiotherapy, and systemic therapy including selumetinib for NF1 plexiform neurofibromas. Literature reviewed through September 2022."
     }
   },
   "37094414": {
@@ -11497,7 +11507,7 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "",
-      "notes": "30-item consensus-based best practice guidelines developed via modified Delphi method (2 rounds, ≥70% threshold) by a 20-member multidisciplinary expert panel. Covers spinal screening/surveillance, surgical intervention (including MCGRs, cervical deformity, tumor resection), and medical therapy (MEK inhibitors) for pediatric NF1. Builds upon a prior systematic review by the same group. No formal GRADE appraisal; evidence base is predominantly case series/reports, so overall strength is expert opinion. No named organizational affiliation identified."
+      "notes": "30-item consensus-based best practice guidelines developed via modified Delphi method (2 rounds, \u226570% threshold) by a 20-member multidisciplinary expert panel. Covers spinal screening/surveillance, surgical intervention (including MCGRs, cervical deformity, tumor resection), and medical therapy (MEK inhibitors) for pediatric NF1. Builds upon a prior systematic review by the same group. No formal GRADE appraisal; evidence base is predominantly case series/reports, so overall strength is expert opinion. No named organizational affiliation identified."
     }
   },
   "37272647": {
@@ -12060,7 +12070,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "REiNS International Collaboration",
-      "notes": "REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) consensus recommendations focused on clinical trial design methodology, including endpoint selection, outcome measures, and trial design standards across NF and schwannomatosis conditions. Abstract not available; classification based on title and known REiNS publication series."
+      "notes": "REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) consensus recommendations focused on clinical trial design methodology, including endpoint selection, outcome measures, and trial design standards across NF and schwannomatosis conditions. Abstract not available; classification based on title and known REiNS publication series.",
+      "focus_clinical_trials": true
     }
   },
   "37791039": {
@@ -12103,7 +12114,7 @@
   "37813009": {
     "pubmed": {
       "pmid": "37813009",
-      "title": "Brazilian Society of Otology task force - Vestibular Schwannoma ‒ evaluation and treatment.",
+      "title": "Brazilian Society of Otology task force - Vestibular Schwannoma \u2012 evaluation and treatment.",
       "abstract": "To review the literature on the diagnosis and treatment of vestibular schwannoma. Task force members were educated on knowledge synthesis methods, including electronic database search, review and selection of relevant citations, and critical appraisal of selected studies. Articles written in English or Portuguese on vestibular schwannoma were eligible for inclusion. The American College of Physicians' guideline grading system and the American Thyroid Association's guideline criteria were used for critical appraisal of evidence and recommendations for therapeutic interventions. The topics were divided into 2 parts: (1) Diagnosis - audiologic, electrophysiologic tests, and imaging; (2) Treatment - wait and scan protocols, surgery, radiosurgery/radiotherapy, and systemic therapy. Decision making in VS treatment has become more challenging. MRI can diagnose increasingly smaller tumors, which has disastrous consequences for the patients and their families. It is important to develop an individualized approach for each case, which highly depends on the experience of each surgical team.",
       "year": "2023",
       "journal": "Braz J Otorhinolaryngol",
@@ -12208,7 +12219,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a case series and literature review on sporadic spinal hamartomas in adults — a rare, non-NF entity. Not related to neurofibromatosis or schwannomatosis. No guideline or formal recommendation methodology employed."
+      "notes": "This is a case series and literature review on sporadic spinal hamartomas in adults \u2014 a rare, non-NF entity. Not related to neurofibromatosis or schwannomatosis. No guideline or formal recommendation methodology employed."
     }
   },
   "37865533": {
@@ -12315,7 +12326,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "REiNS (Response Evaluation in Neurofibromatosis and Schwannomatosis) International Collaboration",
-      "notes": "Focused on biomarker collection, annotation, and data harmonization for NF1/schwannomatosis clinical trials. Covers all SWN subtypes under the broad schwannomatosis umbrella. Recommendations address liquid biopsy (cfDNA/ctDNA), circulating cytokines, common data models, FAIR principles, and reproducibility standards. Not a clinical management guideline per se but provides actionable consensus recommendations for trial design and biosample handling."
+      "notes": "Focused on biomarker collection, annotation, and data harmonization for NF1/schwannomatosis clinical trials. Covers all SWN subtypes under the broad schwannomatosis umbrella. Recommendations address liquid biopsy (cfDNA/ctDNA), circulating cytokines, common data models, FAIR principles, and reproducibility standards. Not a clinical management guideline per se but provides actionable consensus recommendations for trial design and biosample handling.",
+      "focus_clinical_trials": true
     }
   },
   "37905291": {
@@ -12776,7 +12788,8 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "CTF (REiNS International Collaboration)",
-      "notes": "This is a REiNS PRO working group recommendation for use of the FACE-Q Craniofacial Module Appearance Distress scale as a patient-reported outcome measure in NF1 clinical trials targeting plexiform and cutaneous neurofibromas. The recommendation is based on a systematic review of 11 candidate PRO measures using the updated PRO Rating and Acceptance Tool for Endpoints (PRATE), with patient representative involvement. Focus is on clinical trial endpoint methodology rather than diagnosis, treatment, or surveillance per se. No GRADE framework was applied, but the process was systematic and consensus-based."
+      "notes": "This is a REiNS PRO working group recommendation for use of the FACE-Q Craniofacial Module Appearance Distress scale as a patient-reported outcome measure in NF1 clinical trials targeting plexiform and cutaneous neurofibromas. The recommendation is based on a systematic review of 11 candidate PRO measures using the updated PRO Rating and Acceptance Tool for Endpoints (PRATE), with patient representative involvement. Focus is on clinical trial endpoint methodology rather than diagnosis, treatment, or surveillance per se. No GRADE framework was applied, but the process was systematic and consensus-based.",
+      "focus_clinical_trials": true
     }
   },
   "38141750": {
@@ -12842,7 +12855,8 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "International Pediatric Low-Grade Glioma Coalition (iPLGGc)",
-      "notes": "Primarily focused on pediatric low-grade glioma broadly; NF1-associated pLGG (including optic pathway glioma) is a major subset. Addresses clinical trial design, dosing, endpoints, and quality of life for phase I/II trials. NF1 relevance is implicit given OPG and pLGG overlap, but the document is not NF1-specific."
+      "notes": "Primarily focused on pediatric low-grade glioma broadly; NF1-associated pLGG (including optic pathway glioma) is a major subset. Addresses clinical trial design, dosing, endpoints, and quality of life for phase I/II trials. NF1 relevance is implicit given OPG and pLGG overlap, but the document is not NF1-specific.",
+      "focus_clinical_trials": true
     }
   },
   "38191386": {
@@ -13020,7 +13034,8 @@
       ],
       "strength_of_evidence": "Moderate",
       "affiliated_org": "REiNS International Collaboration",
-      "notes": "REiNS PRO Communication Subgroup recommendation for use of the Tinnitus Functional Index as the preferred PROM for tinnitus assessment in NF2-SWN clinical trials. Based on systematic literature search, structured scoring via PRO-RATE tool, and expert/patient representative consensus; not a formal clinical practice guideline but a structured evidence-based recommendation for outcome measure selection in clinical trials."
+      "notes": "REiNS PRO Communication Subgroup recommendation for use of the Tinnitus Functional Index as the preferred PROM for tinnitus assessment in NF2-SWN clinical trials. Based on systematic literature search, structured scoring via PRO-RATE tool, and expert/patient representative consensus; not a formal clinical practice guideline but a structured evidence-based recommendation for outcome measure selection in clinical trials.",
+      "focus_clinical_trials": true
     }
   },
   "38336988": {
@@ -13259,7 +13274,7 @@
         "Systematic review & meta-analysis"
       ],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "Aix Marseille Univ / Université de Toulouse (funded by Fondation de France and Association Neurofibromatoses et Recklinghausen)",
+      "affiliated_org": "Aix Marseille Univ / Universit\u00e9 de Toulouse (funded by Fondation de France and Association Neurofibromatoses et Recklinghausen)",
       "notes": "This is a PRISMA-based systematic review synthesizing 49 studies on visual-processing deficits (visuo-perceptual, visuo-attentional, oculomotor) and their possible relationship to reading difficulties in children with NF1. It does not constitute a clinical guideline or recommendation document; rather, it is a scientific literature review aimed at informing future research and screening approaches."
     }
   },
@@ -13294,7 +13309,7 @@
       "focus_genetic_testing": false,
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "Universidade Federal de São Carlos",
+      "affiliated_org": "Universidade Federal de S\u00e3o Carlos",
       "notes": "This is a descriptive cross-sectional observational study examining quality of life (using INF1-QoL) in 101 Brazilian adults with NF1. It is not a clinical practice guideline, consensus statement, or recommendation document. It provides some general clinical suggestions (multidisciplinary care, pain management, genetic counseling) in its conclusion, but these are not systematically developed recommendations."
     }
   },
@@ -13446,7 +13461,7 @@
   "38581124": {
     "pubmed": {
       "pmid": "38581124",
-      "title": "Autism spectrum disorder profiles in RASopathies: A systematic review.",
+      "title": "Autism spectrum disorder profiles in RASopathies: A\u00a0systematic review.",
       "abstract": "RASopathies are associated with an increased risk of autism spectrum disorder (ASD). For neurofibromatosis type 1 (NF1) there is ample evidence for this increased risk, while for other RASopathies this association has been studied less. No specific ASD profile has been delineated so far for RASopathies or a specific RASopathy individually. We conducted a systematic review to investigate whether a specific RASopathy is associated with a specific ASD profile, or if RASopathies altogether have a distinct ASD profile compared to idiopathic ASD (iASD). We searched PubMed, Web of Science, and Open Grey for data about ASD features in RASopathies and potential modifiers. We included 41 articles on ASD features in NF1, Noonan syndrome (NS), Costello syndrome (CS), and cardio-facio-cutaneous syndrome (CFC). Individuals with NF1, NS, CS, and CFC on average have higher ASD symptomatology than healthy controls and unaffected siblings, though less than people with iASD. There is insufficient evidence for a distinct ASD phenotype in RASopathies compared to iASD or when RASopathies are compared with each other. We identified several potentially modifying factors of ASD symptoms in RASopathies. Our systematic review found no convincing evidence for a specific ASD profile in RASopathies compared to iASD, or in a specific RASopathy compared to other RASopathies. However, we identified important limitations in the research literature which may also account for this result. These limitations are discussed and recommendations for future research are formulated.",
       "year": "2024",
       "journal": "Mol Genet Genomic Med",
@@ -14311,7 +14326,7 @@
   "39264447": {
     "pubmed": {
       "pmid": "39264447",
-      "title": "Neurofibromatosis type 1 adult surveillance form for Austria.",
+      "title": "Neurofibromatosis type\u00a01 adult surveillance form for Austria.",
       "abstract": "Neurofibromatosis type&#xa0;1 (NF1) is a&#xa0;rare autosomal dominant tumor predisposition syndrome with a&#xa0;birth prevalence of approximately 1&#xa0;in 2000-3000 individuals. Management of both benign and malignant tumors arising in individuals with NF1 is demanding and tumors may be difficult to treat. Both standardized and individual surveillance programs are therefore highly important to prevent morbidity and mortality in patients with NF1. The guidelines for the clinical management of NF1 recently proposed by the European Reference Network for Genetic Tumor Risk Syndromes provide the cornerstone of the present surveillance form and were discussed through three rounds of voting and a&#xa0;final consensus meeting involving experts from five Austrian and one German clinical NF1 centers for adults and one patient organization representative. Subsequently, 31&#xa0;items within 4&#xa0;categories were integrated into the proposed surveillance form for Austria. All recommendations, unless otherwise specified, pertain to primarily asymptomatic patients in routine follow-up. At healthcare transition from pediatric to adult surveillance or the initial visit in adulthood, we suggest a&#xa0;thorough clinical, laboratory and radiological examination to obtain a&#xa0;baseline for future diagnostics. To comply with the general screening recommendations in Austria, we suggest extending the frequency of clinical visits from annual to biennial at 50&#xa0;years of age. In cases of clinical dynamics, early follow-up is recommended to facilitate early detection of potential complications. Particular emphasis should be placed on preventive patient education.",
       "year": "2025",
       "journal": "Wien Klin Wochenschr",
@@ -14355,7 +14370,7 @@
       ],
       "strength_of_evidence": "Expert opinion only",
       "affiliated_org": "ERN GENTURIS (adapted by Austrian NF1 centers)",
-      "notes": "National adaptation (Austria) of the 2023 ERN GENTURIS NF1 surveillance guidelines for adults, developed via three voting rounds and a consensus meeting among five Austrian and one German NF1 center plus a patient organization representative. Focuses exclusively on adult (≥18 years) surveillance; does not include formal GRADE or systematic review methodology. Recommendations are primarily expert consensus adapting existing international guidelines to the Austrian healthcare context."
+      "notes": "National adaptation (Austria) of the 2023 ERN GENTURIS NF1 surveillance guidelines for adults, developed via three voting rounds and a consensus meeting among five Austrian and one German NF1 center plus a patient organization representative. Focuses exclusively on adult (\u226518 years) surveillance; does not include formal GRADE or systematic review methodology. Recommendations are primarily expert consensus adapting existing international guidelines to the Austrian healthcare context."
     }
   },
   "39279781": {
@@ -14459,7 +14474,7 @@
       ],
       "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "",
-      "notes": "Systematic review and meta-analysis evaluating bevacizumab efficacy in meningiomas, including a subgroup mention of neurofibromatosis patients. Not a guideline or recommendation document. Evidence base is predominantly retrospective studies (80%), limiting strength. NF2-SWN relevance is indirect — meningiomas are a known NF2 manifestation, but the paper is not NF-specific."
+      "notes": "Systematic review and meta-analysis evaluating bevacizumab efficacy in meningiomas, including a subgroup mention of neurofibromatosis patients. Not a guideline or recommendation document. Evidence base is predominantly retrospective studies (80%), limiting strength. NF2-SWN relevance is indirect \u2014 meningiomas are a known NF2 manifestation, but the paper is not NF-specific."
     }
   },
   "39384109": {
@@ -14905,7 +14920,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a retrospective nationwide cohort study describing incidence, management, and outcomes of pediatric neuroendocrine tumors in Denmark (1995–2020). NF1 is mentioned only incidentally as a predisposing genetic condition in one patient with an appendiceal NET; it is not a focus of the study. The paper is not a guideline, consensus statement, or recommendation document."
+      "notes": "This is a retrospective nationwide cohort study describing incidence, management, and outcomes of pediatric neuroendocrine tumors in Denmark (1995\u20132020). NF1 is mentioned only incidentally as a predisposing genetic condition in one patient with an appendiceal NET; it is not a focus of the study. The paper is not a guideline, consensus statement, or recommendation document."
     }
   },
   "39588641": {
@@ -15371,7 +15386,7 @@
       ],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "Retrospective single-center comparative study evaluating 1D linear measurement techniques (MLD, MLD³, orthogonal analysis) versus 3D segmented volumetric analysis (SVA) for NF2-associated vestibular schwannoma monitoring in 149 patients/292 tumors. Not a guideline or recommendation document, though results have implications for surveillance methodology. Concludes SVA remains gold standard especially for small tumors and bevacizumab monitoring, while orthogonal analysis is a reasonable time-saving alternative for larger tumors."
+      "notes": "Retrospective single-center comparative study evaluating 1D linear measurement techniques (MLD, MLD\u00b3, orthogonal analysis) versus 3D segmented volumetric analysis (SVA) for NF2-associated vestibular schwannoma monitoring in 149 patients/292 tumors. Not a guideline or recommendation document, though results have implications for surveillance methodology. Concludes SVA remains gold standard especially for small tumors and bevacizumab monitoring, while orthogonal analysis is a reasonable time-saving alternative for larger tumors."
     }
   },
   "39881370": {
@@ -16032,7 +16047,7 @@
       ],
       "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "",
-      "notes": "Systematic review and meta-analysis of 6 studies (146 patients, 665 meningiomas) evaluating Gamma Knife radiosurgery outcomes in NF2 patients. Not a guideline or recommendation document; primary research synthesis. Evidence limited by small sample sizes, retrospective study designs, and moderate-to-high heterogeneity (I² values). Could serve as supporting evidence for treatment guidelines on NF2-associated meningiomas."
+      "notes": "Systematic review and meta-analysis of 6 studies (146 patients, 665 meningiomas) evaluating Gamma Knife radiosurgery outcomes in NF2 patients. Not a guideline or recommendation document; primary research synthesis. Evidence limited by small sample sizes, retrospective study designs, and moderate-to-high heterogeneity (I\u00b2 values). Could serve as supporting evidence for treatment guidelines on NF2-associated meningiomas."
     }
   },
   "40241092": {
@@ -16177,7 +16192,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "CHU Montpellier",
-      "notes": "Prospective monocentric observational study of NF-Noonan syndrome (NF-NS) describing clinical and molecular features of 26 patients. Includes a literature review of 321 NF-NS cases. Not a guideline, but the authors do make a recommendation for proactive cardiovascular evaluation (echocardiography) in NF1 patients with Noonan syndrome-like facial phenotype, and systematic RASopathy genetic screening — these are informal clinical recommendations embedded in a primary research paper, not a formal guideline or consensus document."
+      "notes": "Prospective monocentric observational study of NF-Noonan syndrome (NF-NS) describing clinical and molecular features of 26 patients. Includes a literature review of 321 NF-NS cases. Not a guideline, but the authors do make a recommendation for proactive cardiovascular evaluation (echocardiography) in NF1 patients with Noonan syndrome-like facial phenotype, and systematic RASopathy genetic screening \u2014 these are informal clinical recommendations embedded in a primary research paper, not a formal guideline or consensus document."
     }
   },
   "40301971": {
@@ -16778,7 +16793,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a multicentric retrospective observational study (real-world evidence) evaluating selumetinib efficacy and safety in 70 pediatric NF1 patients with symptomatic inoperable plexiform neurofibromas across 11 Italian centers under compassionate use. It is not a guideline, consensus statement, or recommendation document. Notable findings include early radiological response at C6 predicting long-term outcomes, clinical benefit rate of 83.3% at C24, significant pain reduction and QoL improvement independent of radiological response, and introduction of 'major response' (≥50% volume reduction) as an outcome measure."
+      "notes": "This is a multicentric retrospective observational study (real-world evidence) evaluating selumetinib efficacy and safety in 70 pediatric NF1 patients with symptomatic inoperable plexiform neurofibromas across 11 Italian centers under compassionate use. It is not a guideline, consensus statement, or recommendation document. Notable findings include early radiological response at C6 predicting long-term outcomes, clinical benefit rate of 83.3% at C24, significant pain reduction and QoL improvement independent of radiological response, and introduction of 'major response' (\u226550% volume reduction) as an outcome measure."
     }
   },
   "40837390": {
@@ -17704,7 +17719,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a single case report of a cervical dumbbell meningioma with distinct histopathological subtypes (transitional and fibrous WHO grade I) in separate anatomical compartments. It is not a guideline or recommendation document. While meningioma is listed in NF2-SWN manifestations, this case is not in the context of NF2 or schwannomatosis — it is a sporadic meningioma in a 57-year-old man with no reported genetic syndrome. Included meningioma tag only for completeness but this paper has no NF/schwannomatosis relevance."
+      "notes": "This is a single case report of a cervical dumbbell meningioma with distinct histopathological subtypes (transitional and fibrous WHO grade I) in separate anatomical compartments. It is not a guideline or recommendation document. While meningioma is listed in NF2-SWN manifestations, this case is not in the context of NF2 or schwannomatosis \u2014 it is a sporadic meningioma in a 57-year-old man with no reported genetic syndrome. Included meningioma tag only for completeness but this paper has no NF/schwannomatosis relevance."
     }
   },
   "41344893": {
@@ -17777,7 +17792,7 @@
       "focus_genetic_testing": false,
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
-      "affiliated_org": "University Hospital Göttingen",
+      "affiliated_org": "University Hospital G\u00f6ttingen",
       "notes": "This is a single-institution retrospective surgical case series (n=13) describing outcomes of retroperitoneal/pelvic schwannoma and neurofibroma resection with intraoperative neuromonitoring. It is not a guideline, consensus statement, or recommendation document. NF1/NF2 are mentioned only as background context for tumor predisposition, not as the primary study population. The tumors included are mostly sporadic. Not suitable for CTF NF guideline inclusion as a guideline/recommendation source."
     }
   },
@@ -17948,7 +17963,7 @@
       ],
       "strength_of_evidence": "Weak/Conditional",
       "affiliated_org": "SOBOPE (Brazilian Society of Pediatric Oncology)",
-      "notes": "Brazilian national consensus covering pediatric NF1 tumors (benign and malignant) using Delphi methodology with 23 participating experts across 2 rounds. 24 recommendations across OPG, non-optic gliomas, plexiform neurofibromas, MPNST, melanoma, JMML, pheochromocytoma/paraganglioma, and GIST. Evidence levels are predominantly III–IV; most recommendations are based on limited or indirect evidence and expert opinion. Includes MEK inhibitor recommendations (selumetinib, mirdametinib) for inoperable PN. First Brazilian pediatric NF1 tumor consensus."
+      "notes": "Brazilian national consensus covering pediatric NF1 tumors (benign and malignant) using Delphi methodology with 23 participating experts across 2 rounds. 24 recommendations across OPG, non-optic gliomas, plexiform neurofibromas, MPNST, melanoma, JMML, pheochromocytoma/paraganglioma, and GIST. Evidence levels are predominantly III\u2013IV; most recommendations are based on limited or indirect evidence and expert opinion. Includes MEK inhibitor recommendations (selumetinib, mirdametinib) for inoperable PN. First Brazilian pediatric NF1 tumor consensus."
     }
   },
   "41444363": {
@@ -18390,7 +18405,7 @@
       "methodologies": [],
       "strength_of_evidence": "Not assessable",
       "affiliated_org": "",
-      "notes": "This is a radiology review article proposing a step-wise diagnostic algorithm for cystic lung lesions and diffuse cystic lung diseases (DCLDs). NF1 is mentioned only briefly as one of several DCLDs, with a short description of its pulmonary CT features (thin-walled peripheral/subpleural cysts, upper lobe distribution, associated ground glass opacities, nodules, interstitial fibrosis, café-au-lait spots). The paper is not a guideline, consensus statement, or formal recommendation document; it is a narrative/expert review based on PubMed literature search and clinical experience."
+      "notes": "This is a radiology review article proposing a step-wise diagnostic algorithm for cystic lung lesions and diffuse cystic lung diseases (DCLDs). NF1 is mentioned only briefly as one of several DCLDs, with a short description of its pulmonary CT features (thin-walled peripheral/subpleural cysts, upper lobe distribution, associated ground glass opacities, nodules, interstitial fibrosis, caf\u00e9-au-lait spots). The paper is not a guideline, consensus statement, or formal recommendation document; it is a narrative/expert review based on PubMed literature search and clinical experience."
     }
   },
   "41772875": {

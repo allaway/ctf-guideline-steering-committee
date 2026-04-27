@@ -91,6 +91,7 @@
     <option value="focus_treatment">Treatment</option>
     <option value="focus_surveillance_management">Surveillance</option>
     <option value="focus_genetic_testing">Genetic Testing</option>
+    <option value="focus_clinical_trials">Clinical Trials</option>
   </select>
 </div>
 
@@ -369,6 +370,7 @@ function renderDrawer() {
   const focusBoxes = [
     ['focus_diagnosis','Diagnosis'],['focus_treatment','Treatment'],
     ['focus_surveillance_management','Surveillance / Management'],['focus_genetic_testing','Genetic Testing'],
+    ['focus_clinical_trials','Clinical Trials'],
   ].map(([k,lbl])=>`
     <label class="flex items-center gap-2 cursor-pointer text-xs">
       <input type="checkbox" class="w-3.5 h-3.5 accent-[#1F4E79]" ${c[k]?'checked':''}
@@ -772,6 +774,7 @@ function renderDashboard() {
     ['Treatment',              countBool('focus_treatment')],
     ['Surveillance / Mgmt',    countBool('focus_surveillance_management')],
     ['Genetic Testing',        countBool('focus_genetic_testing')],
+    ['Clinical Trials',        countBool('focus_clinical_trials')],
   ];
   const manifCounts = {};
   for (const [cond, field] of Object.entries(MANIFFIELDS)) {
