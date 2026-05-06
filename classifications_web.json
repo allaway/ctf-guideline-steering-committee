@@ -134,7 +134,7 @@
       "journal": "Arch Pathol Lab Med",
       "doi": "10.5858/arpa.2015-0314-RA",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.5858/arpa.2015-0314-RA"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -165,7 +165,7 @@
       "journal": "Childs Nerv Syst",
       "doi": "10.1007/s00381-016-3093-3",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00381-016-3093-3"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -485,7 +485,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000002933",
       "pmc_id": "PMC5578358",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://nrs.harvard.edu/urn-3:HUL.InstRepos:32725810"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -521,7 +521,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000002928",
       "pmc_id": "PMC5578356",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/5578356"
     },
     "classification": {
       "document_type": "Evidence-based recommendation",
@@ -560,7 +560,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000002929",
       "pmc_id": "PMC5578359",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/5578359"
     },
     "classification": {
       "document_type": "Evidence-based recommendation",
@@ -662,7 +662,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000002932",
       "pmc_id": "PMC5578360",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://nrs.harvard.edu/urn-3:HUL.InstRepos:32725809"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -1436,7 +1436,7 @@
       "journal": "Clin Genet",
       "doi": "10.1111/cge.13053",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://dspace.library.uu.nl/handle/1874/363421"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -1533,7 +1533,7 @@
       "journal": "Clin Cancer Res",
       "doi": "10.1158/1078-0432.CCR-17-0589",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://research.manchester.ac.uk/en/publications/3229ea40-51a2-4efb-bd8b-b65ca0442ef1"
     },
     "classification": {
       "document_type": "Expert recommendation",
@@ -2186,7 +2186,7 @@
       "journal": "J Neurol Surg A Cent Eur Neurosurg",
       "doi": "10.1055/s-0037-1608814",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1055/s-0037-1608814"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -2290,7 +2290,7 @@
       "journal": "J Neurol Surg A Cent Eur Neurosurg",
       "doi": "10.1055/s-0037-1608869",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1055/s-0037-1608869"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -2738,7 +2738,7 @@
       "journal": "J Int Adv Otol",
       "doi": "10.5152/iao.2018.5348",
       "pmc_id": "PMC6354487",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.5152/iao.2018.5348"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -2771,7 +2771,7 @@
       "journal": "Childs Nerv Syst",
       "doi": "10.1007/s00381-018-3833-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00381-018-3833-7"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -3420,7 +3420,7 @@
       "journal": "J Med Genet",
       "doi": "10.1136/jmedgenet-2018-105664",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:Suerink Wimmer 2018 CMMRD as diff of NF1.pdf"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -3453,7 +3453,7 @@
       "journal": "Radiol Med",
       "doi": "10.1007/s11547-018-0955-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11547-018-0955-7"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -3859,7 +3859,7 @@
       "journal": "Pediatrics",
       "doi": "10.1542/peds.2019-0660",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:e46.pdf"
     },
     "classification": {
       "document_type": "Clinical practice guideline",
@@ -4009,7 +4009,7 @@
       "journal": "Neuropediatrics",
       "doi": "10.1055/s-0039-1691830",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1055/s-0039-1691830"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -4146,7 +4146,7 @@
       "journal": "Neurosurg Rev",
       "doi": "10.1007/s10143-019-01135-y",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s10143-019-01135-y"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -4181,7 +4181,7 @@
       "journal": "J Neurooncol",
       "doi": "10.1007/s11060-019-03234-8",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11060-019-03234-8"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -4316,7 +4316,7 @@
       "journal": "J Neurooncol",
       "doi": "10.1007/s11060-019-03247-3",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11060-019-03247-3"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -4352,7 +4352,7 @@
       "journal": "Skeletal Radiol",
       "doi": "10.1007/s00256-019-03290-1",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00256-019-03290-1"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -4486,7 +4486,7 @@
       "journal": "Neuro Oncol",
       "doi": "10.1093/neuonc/noz153",
       "pmc_id": "PMC6954440",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://research.manchester.ac.uk/en/publications/216f3071-4682-4a6a-be22-d423c3fbcf75"
     },
     "classification": {
       "document_type": "Clinical practice guideline",
@@ -4863,7 +4863,7 @@
       "journal": "Eur Arch Otorhinolaryngol",
       "doi": "10.1007/s00405-019-05741-w",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00405-019-05741-w"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -5397,7 +5397,7 @@
       "journal": "Neuropediatrics",
       "doi": "10.1055/s-0040-1710524",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1055/s-0040-1710524"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -5461,7 +5461,7 @@
       "journal": "Endocrine",
       "doi": "10.1007/s12020-020-02351-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s12020-020-02351-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -5605,7 +5605,7 @@
       "journal": "J Genet Couns",
       "doi": "10.1002/jgc4.1303",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:Journal of Genetic Counseling - 2020 - Radtke - Genetic Counseling for Neurofibromatosis 1 Neurofibromatosis 2 and.pdf"
     },
     "classification": {
       "document_type": "Expert recommendation",
@@ -5847,7 +5847,7 @@
       "journal": "Childs Nerv Syst",
       "doi": "10.1007/s00381-020-04706-3",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00381-020-04706-3"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -6140,7 +6140,7 @@
       "journal": "Clin J Gastroenterol",
       "doi": "10.1007/s12328-020-01227-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s12328-020-01227-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -6173,7 +6173,7 @@
       "journal": "Neurooncol Adv",
       "doi": "10.1093/noajnl/vdaa095",
       "pmc_id": "PMC7486535",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/7486535"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -6274,7 +6274,7 @@
       "journal": "Foot (Edinb)",
       "doi": "10.1016/j.foot.2020.101746",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://hdl.handle.net/10072/416369"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -6649,7 +6649,7 @@
       "journal": "J Natl Cancer Inst",
       "doi": "10.1093/jnci/djaa204",
       "pmc_id": "PMC8246828",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/8246828"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -6891,7 +6891,7 @@
       "journal": "J Med Genet",
       "doi": "10.1136/jmedgenet-2020-107627",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:Aronson 2021 Diagnostic criteria for CMMRD international consensus group.pdf"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -7054,7 +7054,7 @@
       "journal": "Hautarzt",
       "doi": "10.1007/s00105-021-04779-4",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00105-021-04779-4"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -7116,7 +7116,7 @@
       "journal": "Curr Hypertens Rep",
       "doi": "10.1007/s11906-021-01136-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11906-021-01136-7"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -7505,7 +7505,7 @@
       "journal": "Radiologe",
       "doi": "10.1007/s00117-021-00861-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00117-021-00861-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -7645,7 +7645,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000012421",
       "pmc_id": "PMC8594008",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/8594008"
     },
     "classification": {
       "document_type": "Evidence-based recommendation",
@@ -7684,7 +7684,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000012426",
       "pmc_id": "PMC8594001",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/8594001"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -7915,7 +7915,7 @@
       "journal": "Neurology",
       "doi": "10.1212/WNL.0000000000012430",
       "pmc_id": "PMC8594004",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/8594004"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -7951,7 +7951,7 @@
       "journal": "Eur J Med Genet",
       "doi": "10.1016/j.ejmg.2021.104281",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://pure.eur.nl/en/publications/8118ce3b-c70d-4b0b-b224-20b4e97efc4f"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -8026,7 +8026,7 @@
       "journal": "Radiologe",
       "doi": "10.1007/s00117-021-00892-6",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00117-021-00892-6"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -8061,7 +8061,7 @@
       "journal": "Clin Cancer Res",
       "doi": "10.1158/1078-0432.CCR-21-1779",
       "pmc_id": "PMC8530953",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PMC XML"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -8209,7 +8209,7 @@
       "journal": "Indian J Otolaryngol Head Neck Surg",
       "doi": "10.1007/s12070-020-02321-x",
       "pmc_id": "PMC8364601",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s12070-020-02321-x"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -8571,7 +8571,7 @@
       "journal": "J Craniofac Surg",
       "doi": "10.1097/SCS.0000000000008381",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://hdl.handle.net/10138/351298"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -9009,7 +9009,7 @@
       "journal": "Clin Exp Optom",
       "doi": "10.1080/08164622.2022.2048999",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://hdl.handle.net/10072/426076"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -9069,7 +9069,7 @@
       "journal": "Head Neck Pathol",
       "doi": "10.1007/s12105-022-01414-z",
       "pmc_id": "PMC9018953",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://www.ncbi.nlm.nih.gov/pmc/articles/9018953"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -9868,7 +9868,7 @@
       "journal": "J Neurooncol",
       "doi": "10.1007/s11060-022-04104-6",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11060-022-04104-6"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -10137,7 +10137,7 @@
       "journal": "Radiologie (Heidelb)",
       "doi": "10.1007/s00117-022-01059-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00117-022-01059-7"
     },
     "classification": {
       "document_type": "Expert recommendation",
@@ -10372,7 +10372,7 @@
       "journal": "Ir J Med Sci",
       "doi": "10.1007/s11845-022-03184-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11845-022-03184-7"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -10876,7 +10876,7 @@
       "journal": "Indian J Otolaryngol Head Neck Surg",
       "doi": "10.1007/s12070-021-02900-6",
       "pmc_id": "PMC9895494",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s12070-021-02900-6"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -10936,7 +10936,7 @@
       "journal": "Clin Genet",
       "doi": "10.1111/cge.14310",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:Halliday et al 2023 Updated protocol for genetic testing screening and clinical management of indiv at risk of NF2.SWN.pdf"
     },
     "classification": {
       "document_type": "Clinical practice guideline",
@@ -11009,7 +11009,7 @@
       "journal": "Eur Spine J",
       "doi": "10.1007/s00586-023-07600-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00586-023-07600-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -11073,7 +11073,7 @@
       "journal": "Eur J Med Genet",
       "doi": "10.1016/j.ejmg.2023.104734",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://hal.inrae.fr/hal-04246685/document"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -11277,7 +11277,7 @@
       "journal": "Ann Surg Oncol",
       "doi": "10.1245/s10434-023-13519-y",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1245/s10434-023-13519-y"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -11308,7 +11308,7 @@
       "journal": "Eur J Med Genet",
       "doi": "10.1016/j.ejmg.2023.104773",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:Koza 2023 Consensus recommendations on counselling in Phelan-McDermid ring 22.pdf"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -11554,7 +11554,7 @@
       "journal": "Indian J Otolaryngol Head Neck Surg",
       "doi": "10.1007/s12070-022-03229-4",
       "pmc_id": "PMC10235357",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s12070-022-03229-4"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -11623,7 +11623,7 @@
       "journal": "Fam Cancer",
       "doi": "10.1007/s10689-023-00340-5",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s10689-023-00340-5"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -11971,7 +11971,7 @@
       "journal": "Acta Biochim Pol",
       "doi": "10.18388/abp.2020_6955",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://ojs.ptbioch.edu.pl/index.php/abp/article/download/6955/5839"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12035,7 +12035,7 @@
       "journal": "Clin Trials",
       "doi": "10.1177/17407745231201345",
       "pmc_id": "PMC10865758",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PMC XML"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -12374,7 +12374,7 @@
       "journal": "Curr Oncol Rep",
       "doi": "10.1007/s11912-023-01451-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11912-023-01451-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12450,7 +12450,7 @@
       "journal": "Ann Med Surg (Lond)",
       "doi": "10.1097/MS9.0000000000001329",
       "pmc_id": "PMC10617891",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PMC XML"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12518,7 +12518,7 @@
       "journal": "Skeletal Radiol",
       "doi": "10.1007/s00256-023-04511-4",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00256-023-04511-4"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12619,7 +12619,7 @@
       "journal": "Eur Spine J",
       "doi": "10.1007/s00586-023-08039-y",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00586-023-08039-y"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12653,7 +12653,7 @@
       "journal": "Semin Neurol",
       "doi": "10.1055/s-0043-1777702",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1055/s-0043-1777702"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12836,7 +12836,7 @@
       "journal": "Neuro Oncol",
       "doi": "10.1093/neuonc/noad227",
       "pmc_id": "PMC10912006",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:https://discovery.ucl.ac.uk/10185874/2/Jacques_Consensus%20framework%20for%20conducting%20phase%20I_II%20clinical%20trials%20for%20children%2C%20adolescents%2C%20and%20young%20adults%20with%20pediatric%20low-grade%20glioma_AAM.pdf"
     },
     "classification": {
       "document_type": "Consensus statement",
@@ -12935,7 +12935,7 @@
       "journal": "Qual Life Res",
       "doi": "10.1007/s11136-023-03596-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11136-023-03596-7"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -12971,7 +12971,7 @@
       "journal": "Neurosurg Rev",
       "doi": "10.1007/s10143-024-02305-3",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s10143-024-02305-3"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -13183,7 +13183,7 @@
       "journal": "J Neurooncol",
       "doi": "10.1007/s11060-024-04617-2",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11060-024-04617-2"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -13322,7 +13322,7 @@
       "journal": "Eur Spine J",
       "doi": "10.1007/s00586-024-08194-w",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00586-024-08194-w"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -13599,7 +13599,7 @@
       "journal": "Int J Neurosci",
       "doi": "10.1080/00207454.2024.2342977",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-577770"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -13956,7 +13956,7 @@
       "journal": "Eur Radiol",
       "doi": "10.1007/s00330-024-10885-3",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00330-024-10885-3"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -14451,7 +14451,7 @@
       "journal": "Neurosurg Rev",
       "doi": "10.1007/s10143-024-02889-w",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s10143-024-02889-w"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -14872,7 +14872,7 @@
       "journal": "Indian J Otolaryngol Head Neck Surg",
       "doi": "10.1007/s12070-024-04910-6",
       "pmc_id": "PMC11569349",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s12070-024-04910-6"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -15103,7 +15103,7 @@
       "journal": "Eur J Pediatr",
       "doi": "10.1007/s00431-024-05825-8",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00431-024-05825-8"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -15238,7 +15238,7 @@
       "journal": "Dtsch Arztebl Int",
       "doi": "10.3238/arztebl.m2024.0257",
       "pmc_id": "PMC12434714",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "PDF:Dtsch_Arztebl_Int-122_071.pdf"
     },
     "classification": {
       "document_type": "Expert recommendation",
@@ -15724,7 +15724,7 @@
       "journal": "Arch Dermatol Res",
       "doi": "10.1007/s00403-025-04056-7",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00403-025-04056-7"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -15957,7 +15957,7 @@
       "journal": "J Med Genet",
       "doi": "10.1136/jmg-2025-110703",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://research.manchester.ac.uk/en/publications/0ee1dd1c-7856-4ae3-95ef-b487ee6a4ab4"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -16024,7 +16024,7 @@
       "journal": "Neurosurg Rev",
       "doi": "10.1007/s10143-025-03519-9",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s10143-025-03519-9"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -16096,7 +16096,7 @@
       "journal": "Mol Biol Rep",
       "doi": "10.1007/s11033-025-10431-4",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11033-025-10431-4"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -16433,7 +16433,7 @@
       "journal": "Int J Clin Oncol",
       "doi": "10.1007/s10147-025-02793-3",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s10147-025-02793-3"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -16533,7 +16533,7 @@
       "journal": "Gene Ther",
       "doi": "10.1038/s41434-025-00542-9",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1038/s41434-025-00542-9"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -16981,7 +16981,7 @@
       "journal": "Br J Cancer",
       "doi": "10.1038/s41416-025-03151-w",
       "pmc_id": "PMC12572345",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1038/s41416-025-03151-w"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -17253,7 +17253,7 @@
       "journal": "Eur Arch Otorhinolaryngol",
       "doi": "10.1007/s00405-025-09734-w",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00405-025-09734-w"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -17350,7 +17350,7 @@
       "journal": "Target Oncol",
       "doi": "10.1007/s11523-025-01176-y",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11523-025-01176-y"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -17383,7 +17383,7 @@
       "journal": "Oncogene",
       "doi": "10.1038/s41388-025-03617-4",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1038/s41388-025-03617-4"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -17416,7 +17416,7 @@
       "journal": "Eur J Pediatr",
       "doi": "10.1007/s00431-025-06611-w",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s00431-025-06611-w"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -18075,7 +18075,7 @@
       "journal": "J Neurooncol",
       "doi": "10.1007/s11060-025-05335-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:doi:10.1007/s11060-025-05335-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -18250,7 +18250,7 @@
       "journal": "Eur J Hum Genet",
       "doi": "10.1038/s41431-026-02014-z",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://doi.org/10.1038/s41431-026-02014-z"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -18351,7 +18351,7 @@
       "journal": "J Child Neurol",
       "doi": "10.1177/08830738261416621",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://cris.maastrichtuniversity.nl/en/publications/aeffa29c-94dc-4793-a566-de2d984aee9e"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -18552,7 +18552,7 @@
       "journal": "Biomed Pharmacother",
       "doi": "10.1016/j.biopha.2026.119251",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://pure.eur.nl/en/publications/9055de50-f17f-4d60-8149-6cd815b0c964"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
@@ -18687,7 +18687,7 @@
       "journal": "J Med Case Rep",
       "doi": "10.1186/s13256-026-06002-1",
       "pmc_id": "",
-      "fulltext_source": "abstract_only"
+      "fulltext_source": "HTML:https://doi.org/10.1186/s13256-026-06002-1"
     },
     "classification": {
       "document_type": "Not a guideline or recommendation",
